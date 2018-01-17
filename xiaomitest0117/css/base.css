@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin:0;
+}
+/* global start*/
+.content{
+    width:1226px;
+    margin:0 auto;
+}
+.clearfix{
+    content: "";
+    clear: both;
+    display: block;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* global end*/
+
+
+/* topbar start */
+.topbar{
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    color:#424242;
+    background-color: #333333;
+}
+.topbar .text-left{
+    float: left;
+}
+.topbar  span{
+    margin: 0 3px;
+}
+.topbar  a{
+    text-decoration: none;
+    color: #b0b0b0;
+}
+.topbar a:hover{
+    color: #ffffff;
+}
+.topbar .text-right{
+    float: right;
+}
+.topbar .mini-car{
+    float: right;
+    display: block;
+    width: 120px;
+    height: 40px;
+    margin-left: 30px;
+    text-align: center;
+    background-color: #424242;
+}
+.topbar .mini-car:hover{
+    color: #ff6700;
+}
+/* topbar end*/
+
+/* header start*/
+.header .content{
+    padding: 20px 0;
+}
+.header .header-top{
+    float: left;
+}
+.header .header-top a{
+    display: block;
+    width: 55px;
+    height: 55px;
+    background-color: #ff6700;
+}
+.header .header-top a:after{
+    content: "";
+    display: block;
+    width: 55px;
+    height: 55px;
+    background: url("../images/mi-logo.png") no-repeat center;
+}
+.header .header-center{
+    float: left;
+   margin-left: 150px;
+}
+.header .header-center ul{
+    list-style-type: none;
+}
+.header .header-center li{
+    float: left;
+   height: 55px;
+    line-height: 55px;
+    padding: 0 10px;
+}
+.header .header-center a{
+    text-decoration: none;
+    color: #757575;
+    font-size: 16px;
+}
+.header .header-bottom{
+    float: right;
+}
+.header .header-bottom input{
+    width: 214px;
+    height: 53px;
+    padding: 1px 17px;
+    border: 1px solid #e0e0e0;
+}
+.header .header-bottom .search-btn{
+    float: right;
+    height: 55px;
+    line-height: 55px;
+    width: 55px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    text-decoration: none;
+    margin-left: -1px;
+    font-size: 24px;
+    color: #616161;
+}
+.header .search-btn i{
+    font-size: 24px;
+}
+.header .header-bottom{
+    position: relative;
+}
+.header .header-bottom .input-text{
+    position:absolute;
+    top: 14px;
+    right: 62px;
+}
+.header .input-text a{
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 0 5px;
+    background-color: #eeeeee;
+    color: #757575;
+}
+.header .input-text a:hover{
+    color: #ffffff;
+    background-color: #ff6700;
+}
+/* header end*/
