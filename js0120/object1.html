@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    b="小明";
+    var person ={
+        name: b ,
+        age: "22",
+        height:"180"
+    };
+    var a = window.prompt("有没有对象啊");
+    if(a=="有"){
+        alert("你说:他叫"+person.name+"今年"+person.age+"身高"+person.height);
+        var c = prompt("哪个学校的");
+        person.school=c;
+        alert("你说：他是"+person.school+"的！")
+    }else if(a=="没有"){
+        alert("你妈妈说:哦")
+    }
+</script>
+
+</body>
+</html>
