@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul li{
+            margin-top: 10px;
+        }
+        .normal p{
+            width: 100px;
+            border: 1px solid #dddddd;
+            background-color: #eeeeee;
+            white-space: nowrap;
+            overflow: hidden;
+            /*word-wrap: normal;*/
+            text-overflow: ellipsis;
+        }
+        .break-word p{
+            width: 100px;
+            border: 1px solid #dddddd;
+            word-wrap: break-word;
+            background-color: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="normal">
+        <b>normal</b>
+        <p>aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+    </li>
+    <li class="break-word">
+        <b>break-word</b>
+        <p>aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+    </li>
+</ul>
+</body>
+</html>

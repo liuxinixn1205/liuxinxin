@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 300px;
+            border: 10px dashed #666666;
+            margin-top: 30px;
+            padding: 30px;
+            background: #aaa url("../img/p_103x196_1.jpg") no-repeat;
+        }
+        .div1{
+            background-origin: border-box;
+        }
+        .div2{
+            background-origin: padding-box;
+        }
+        .div3 {
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+</body>
+</html>
