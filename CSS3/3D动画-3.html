@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div1{
+            width: 200px;
+            height: 100px;
+            background: red;
+            animation: move 2s linear 2 alternate forwards 1s  /*paused infinite*/;
+        }
+        @keyframes move {
+            0%{
+              width: 200px;
+            }
+            50%{
+                width: 1000px;
+            }
+            100%{
+                width: 50px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+</body>
+</html>

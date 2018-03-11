@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body{
+            background: #000000;
+            perspective: 1000px;
+            perspective-origin: center center;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed #b0b0b0;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            margin-left: -100px;
+            transform-style: preserve-3d;
+            animation: move 2s linear infinite;
+        }
+        @keyframes move {
+            from{
+                transform: rotateY(360deg);
+            }
+            to{
+                transform: rotateY(0);
+            }
+        }
+        .box div{
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,.5);
+            color: #ffffff;
+            font-size: 40px;
+            line-height: 200px;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            top:0;
+            border-radius: 20px;
+        }
+        .div1{
+            transform: rotateY(0) translateZ(100px);
+        }
+        .div2{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .div3{
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        .div4{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .div5{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .div6{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+    <div class="div5">5</div>
+    <div class="div6">6</div>
+</div>
+</body>
+</html>
