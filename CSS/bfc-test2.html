@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC 高度塌陷</title>
+    <style>
+        /*解决高度塌陷，clearfix更推荐使用*/
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+            /*兼容IE6，IE7*/
+            *zoom: 1;
+        }
+        .test3{
+            width: 800px;
+            background-color: green;
+            /*overflow: hidden;*/
+            /*position: absolute;*/
+            /*display: inline-block;*/
+            /*float: left;*/
+        }
+        .test1{
+            width: 100px;
+            height: 400px;
+            background-color: red;
+            float: left;
+        }
+        .test2{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="test3 clearfix">
+    <div class="test1"></div>
+    <div class="test2"></div>
+</div>
+
+</body>
+</html>

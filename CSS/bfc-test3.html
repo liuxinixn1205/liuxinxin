@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC 不与float box 重叠</title>
+    <style>
+        .left{
+            width: 200px;
+            height: 500px;
+            background-color: #FF0000;
+            float: left;
+        }
+        .right{
+            width: 400px;
+            height: 500px;
+            background-color: blue;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="left"></div>
+<div class="right"></div>
+</body>
+</html>

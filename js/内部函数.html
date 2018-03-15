@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内部函数</title>
+</head>
+<body>
+
+<script>
+    //虽然函数可以嵌套，但是局部变量与全局变量的规则没有改变。
+//    var a = 1;
+//    function fun() {
+//        console.log(a);
+//       function b() {
+//           var aaa=2;
+//           console.log(a)
+//       }
+//       b();
+//       console.log(aaa);//not defined
+//    }
+//    fun();//a=1;a=1;
+
+//    var a = 0;
+//    function fun() {
+//        a = 1;
+//        console.log(a);
+//        var a = 2;
+//        console.log(a);
+//    }
+//    fun();//a=1;a=
+
+    //函数体内变量提升。
+    var a = 0;
+    function fun() {         //var a;
+        console.log(a);      //console.log(a);
+        var a = 2;           //a=2;
+        console.log(a);
+    }
+    fun();//a=undefined ; a=2
+</script>
+</body>
+</html>

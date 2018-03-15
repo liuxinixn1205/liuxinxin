@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin 高度塌陷</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            /*解决margin高度塌陷问题用float解决*/
+            float: left;
+        }
+        .test1{
+            background-color: #FF0000;
+            margin-bottom: 100px;
+        }
+        .test2{
+            margin-top: 50px;
+            background-color: #0000ff;
+        }
+    </style>
+</head>
+<body>
+<div >
+    <div class="test1">123</div>
+    <div class="test2">aa</div>
+</div>
+
+</body>
+</html>

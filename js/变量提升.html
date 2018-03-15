@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量提升</title>
+</head>
+<body>
+
+<script>
+    //变量提升实例
+//    var v = 'Hello Word';
+//    function fun() {
+//        console.log(v);
+//    }
+//    fun();//Hello Word;
+
+//变量提升的实例
+//    var v = 'Hello Word';
+//    function fun() {
+//        console.log(v);//相当于var v；console.log（v）；v="hi!";
+//        var v = "hi!";
+//    }
+//    fun();//undefined
+
+    //函数提升实例
+    //正确的方式：先声明函数，再调用函数（最佳实践）
+//    function catName(name) {
+//        console.log("My cat's name is " + name);
+//    }
+//    catName("Tigger");
+
+
+    //函数提升实例
+    //不推荐的方式：先调用函数，再声明函数。
+//    catName("Tigger");
+//    function catName(name) {
+//        console.log("My cat's name is " +name);
+//    }//相当于正确方式的执行方式。结果一样。
+
+
+//    a();//
+//    var a = function () {
+//        console.log("1");
+//    }//is not a function;
+//    //var a;
+//    //a();
+
+    var a = 1;
+    var a =  function() {
+    }
+    console.log(a);//f(){  }
+
+</script>
+</body>
+</html>

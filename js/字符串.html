@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+</head>
+<body>
+
+<script>
+
+    var aa="abcdefg";
+    //字符串长度
+    console.log(aa.length);//7
+
+      //字符串索引，从0开始。
+    console.log(aa.indexOf("d"));// 3;
+    console.log(aa.indexOf("x"));//-1;
+    console.log(aa.lastIndexOf("a"));//0
+
+    //索引到第0位，将第0位的字符转换成code码。
+    console.log(aa.charCodeAt(0));//97
+
+    //字符串替换。
+    console.log(aa.replace("fg","xx"));//abcdexx;
+
+    //截取字符串，从第几位开始，截取几位。包括本身。
+    console.log(aa.substr(1,3));//bcd;
+
+    //截取字符串，从第几位开始，到几位之前的字符串。不包括本身
+    console.log(aa.substring(1.3));//bc
+
+    //转换成大写
+    console.log(aa.toUpperCase());
+
+    //根据所规定的东西，返回一个数组。
+    console.log(aa.split(","));//ab,cde,fg;
+</script>
+</body>
+</html>

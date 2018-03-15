@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC边框重叠</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+        .test1{
+            width: 400px;
+            height: 400px;
+            margin-top: 20px;
+           display: inline-block;
+            /*position: absolute;*/
+            /*float: left;*/
+            /*overflow: hidden;*/
+        }
+        .test2{
+            background-color: blue;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="test1">
+    <div class="test2"></div>
+</div>
+</body>
+</html>

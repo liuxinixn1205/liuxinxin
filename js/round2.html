@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var which = window.confirm("今天中午吃什么？")
+   if(which){
+        var num = window.prompt("几个人吃啊？");
+        var a = Math.random();
+        a = a*10;
+        a = Math.floor(a);
+
+        switch (a){
+            case 1:
+                alert(num+"个人吃土豆丝");
+                break;
+            case 2:
+                alert(num+"个人吃鱼香肉丝");
+                break;
+            case 3:
+                alert(num+"个人吃宫保鸡丁");
+                break;
+            case 4:
+                alert(num+"个人吃麻辣鳕鱼");
+                break;
+            case 5:
+                alert(num+"个人吃锅包肉");
+                break;
+            case 6:
+                alert(num+"个人吃刀鱼");
+                break;
+            case 7:
+                alert(num+"个人吃火锅");
+                break;
+            case 8:
+                alert(num+"个人吃撸串");
+                break;
+            case 9:
+                alert(num+"个人吃烧烤");
+                break;
+            default:
+                alert(num+"个人吃拉皮");
+
+        }
+   }else {
+       alert("知道吃什么还问")
+   }
+</script>
+</body>
+</html>

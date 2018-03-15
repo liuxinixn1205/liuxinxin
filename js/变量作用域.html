@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量作用域</title>
+</head>
+<body>
+
+<script>
+//    实例
+//    var a = 1;
+//    function fun() {
+//        console.log(a)
+//    }
+//    fun();  //a=1
+
+//实例
+//    var a = 1;
+//    function fun() {
+//        var b = 2;
+//        console.log("a="+a+" b="+b);
+//    }
+//    fun();
+//    console.log("a="+a+" b="+b);//a=1 b=2; a=1 b没有被定义。
+
+    //实例
+//    var a = 1;
+//    function fun() {
+//        var a = 2;
+//        console.log(a);
+//    }
+//    fun();
+//    console.log(a);//a=2; a=1;
+
+    //实例
+//    var a = 5;
+//    var b = 6;
+//    var c = 7;
+//    function fun() {
+//        var a = 10;
+//        b = 20;//不定义相当于给全局变量改了个值。
+//        console.log("a="+a+" b="+b+" c="+c);
+//    }
+//    fun();
+//    console.log("a="+a+" b="+b+" c="+c);//a=10 b=20 c=7;a=5 b=20 c=7;
+
+//    实例
+//    function fun() {
+//        i=5;//相当于定义了一个全局变量。
+//        console.log(i);
+//    }
+//    fun();
+//    console.log(i);//i=5;i=5;
+
+    //实例
+//    var x = 1;
+//    console.log(x);
+//    if (true){
+//        var b =2;//只有function里的变量才具有变量作用域。
+//        console.log(x);
+//    }
+//    console.log(b);//x=1; x=1; b=2;
+
+    //实例
+//    var x = 1;
+//    console.log(x);
+//    function fun() {
+//        var x = 2;
+//        console.log(x);
+//    }
+//    fun();
+//    console.log(x);//x=1;x=2;x=1;
+
+
+    var a = 1;
+    var b = a;
+    a = 3;
+    console.log(b);//b=1;
+
+
+</script>
+</body>
+</html>

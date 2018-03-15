@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<div id="div1" data-aaa="11" data-bbb-ccc="22"></div>
+<script>
+    //jquery
+   console.log( $("#div1").data("aaa"));//jquery获取自定义的属性。
+    
+    //原生的
+//    var oDiv = document.getElementById("div1");
+//    var aa = oDiv.getAttribute("test1");//获取自定义属性
+//    oDiv.setAttribute("aaa","test");//设置属性
+//    console.log(aa);
+//    //自定义的属性不要随便写，一般为以下的方法；规定的自定义属性一般以data开头
+//    var bb = oDiv.dataset.aaa;
+//    var cc = oDiv.dataset.bbbCcc;
+//    console.log(cc);
+//    console.log(bb);
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环</title>
+</head>
+<body>
+
+<script>
+    for(var i=0;i<10;i++){
+        console.log(i);
+    }
+
+    var a = 0;
+    while (a>10){
+        console.log(a+"while");
+    }
+
+   //循环至少执行一次。
+    do{
+        console.log(a+"do while");
+    }while (a>10);
+
+
+    //三元运算符，判断如果true，执行第一个，如果false，执行第二个。
+    3>2?  a=0 : a=1;
+    console.log(a);
+</script>
+</body>
+</html>

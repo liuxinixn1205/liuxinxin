@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style>
+        /*标签选择器*/
+        div{
+            font-size: 40px;
+        }
+        /*类选择器*/
+        .test1{
+            color: lime;
+        }
+        /*id选择器*/
+        #test2{
+            color: aqua;
+        }
+        /*派生选择器*/
+        .test3 ul li{
+            color: red;
+        }
+        /*子标签选择器*/
+        .test4 >ul >li{
+            color: #ff00ff;
+        }
+        /*相邻兄弟选择器*/
+        .test4 ul+p{
+            color: lime;
+        }
+
+    </style>
+</head>
+<body>
+<div class="test3">
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+</div>
+<div class="test1">class 文本</div>
+<div id="test2">id 文本</div>
+
+<div class="test4 test5" id="test6">
+    <ul class="test7">
+        <li>item1</li>
+        <li class="test8" id="test9">item2</li>
+        <li>item3</li>
+    </ul>
+    <p>文本</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .test1{
+            background-color: red;
+        }
+        /*.test2{*/
+        /*position: absolute;*/
+        /*left: 100px;*/
+        /*top: 0;*/
+        /*background-color: blue;*/
+        /*}*/
+        .test2{
+            position: fixed;
+            bottom: 100px;
+            right: 0;
+            background-color: blue;
+        }
+        .test3{
+            background-color: green;
+        }
+        .box{
+            margin-top: 100px;
+            margin-left: 100px;
+            position: relative;
+            background-color: #ff00ff;
+            height: 1000px;
+            width: 1000px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="test1">1</div>
+    <div class="test2">2</div>
+    <div class="test3">3</div>
+</div>
+
+</body>
+</html>

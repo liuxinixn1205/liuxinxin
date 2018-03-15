@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            background: #000000;
+        }
+    </style>
+</head>
+<body>
+<canvas width="400" height="400" id="box"></canvas>
+<script>
+    var oBox = document.querySelector("#box");
+    var context = oBox.getContext("2d");
+    context.beginPath();
+    context.moveTo(10,10);//x轴 y轴从10像素开始
+    context.lineTo(100,100);//到100像素结束
+    context.lineWidth = 10;//线的宽度
+    context.strokeStyle = "#ffffff";//线的颜色
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(100,100);
+    context.lineTo(10,200);
+    context.strokeStyle = "#ff0000";
+    context.stroke();
+
+    var x = oBox.width / 2;
+    var y = oBox.canvas
+</script>
+</body>
+</html>

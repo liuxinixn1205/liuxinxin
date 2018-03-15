@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+
+<script>
+   var person = {
+       name:"xiaoming",
+       age:"15",
+       sex:"boy",
+       school:{
+           middleSchool:"jianguo",
+           highSchool:"baiquanyizhong"
+       }
+   };
+  //对象链式引用。
+   //console.log(person.school.middleSchool);
+    console.log(person["school"]["highSchool"]);
+
+
+    var a = 10;
+    var b = 11;
+    var c = "1";
+    //简写 var a =10 ,b = 11 ,c = "1";
+</script>
+</body>
+</html>

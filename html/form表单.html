@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    文本框
+    label for要for id，无论是点击文字还是文本框，都会点中文本框
+    <label for="labelinput">文本框</label>
+    <input type="text" id="labelinput" placeholder="请输入用户名">
+    <input type="password">
+    <input type="button" value="按钮">
+    <input type="submit" value="提交">
+
+    下拉菜单  value做前后端交互时使用，作为数据传输/selected默认选择
+    <select name="" id="">
+        <option value="">1</option>
+        <option selected="selected" value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+    </select>
+
+    <select name="" multiple="multiple" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+    </select>
+    name是一个标识 cols列 rows行，文本域
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+    checked默认值
+    <input type="checkbox" name="">复选框
+    <input checked="checked" type="checkbox" name="">复选框
+    <input type="checkbox" name="">复选框
+
+    name写相同的名字，证明他们是一组的。
+    <input type="radio" name="testRadio">单选框
+    <input type="radio" name="testRadio">单选框
+    <input type="radio" name="testRadio">单选框
+
+</form>
+</body>
+</html>

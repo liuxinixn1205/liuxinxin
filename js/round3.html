@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var isFor = true;
+    var which = window.confirm("今天吃什么？");
+    if(which){
+        var num = window.prompt("几个人吃？");
+        var personName = new Array();
+        for(var i=0;i<num;i++){
+            personName[i] = window.prompt("第"+(i+1)+"个人叫什么？");
+            if(!personName[i]){
+                isFor = false;
+                break;
+            }
+        }
+        if(isFor){
+            for(var j=0;j<personName.length;j++){
+                var string1 = personName[j];
+                var a = Math.random();
+                a = a*10;
+                a = Math.floor(a);
+                switch (a){
+                    case 1:
+                        alert(string1+"吃土豆丝");
+                        break;
+                    case 2:
+                        alert(string1+"吃鱼香肉丝");
+                        break;
+                    case 3:
+                        alert(string1+"吃宫保鸡丁");
+                        break;
+                    case 4:
+                        alert(string1+"吃麻辣鳕鱼");
+                        break;
+                    case 5:
+                        alert(string1+"吃锅包肉");
+                        break;
+                    case 6:
+                        alert(string1+"吃刀鱼");
+                        break;
+                    case 7:
+                        alert(string1+"吃火锅");
+                        break;
+                    case 8:
+                        alert(string1+"吃撸串");
+                        break;
+                    case 9:
+                        alert(string1+"吃烧烤");
+                        break;
+                    default:
+                        alert(string1+"吃拉皮");
+                }
+            }
+        }else{
+            alert("是不是不想吃饭了！");
+        }
+    }else{
+        alert("取消");
+    }
+</script>
+</body>
+</html>

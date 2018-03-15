@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对齐方式</title>
+    <style>
+
+        /*水平居中的方式 有两种一种是定位 一种是margin: auto*/
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .mid{
+            background-color: #ff00ff;
+           margin: auto;
+        }
+        .mid1{
+            background-color: #ff0000;
+            position: fixed;
+            left:50%;
+            top: 300px;
+            margin-left: -100px;
+            /*两个值分别是 上下 左右*/
+            /*margin: 100px 100px;*/
+            /*四个值分别代表 上 右 下 左*/
+            /*margin: 10px 30px 60px 100px;*/
+        }
+        img{
+            /*opacity有兼容性问题 在IE系统中不兼容。*/
+            opacity: 0.5;
+            /*在IE系统中使用。*/
+            filter: alpha(opacity=40);
+        }
+    </style>
+</head>
+<body>
+<div class="mid"></div>
+<div class="mid1"></div>
+<img src="img/github.png" alt="">
+</body>
+</html>

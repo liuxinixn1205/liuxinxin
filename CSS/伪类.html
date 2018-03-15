@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类</title>
+    <style>
+        /*伪类*/
+        ul li:first-child{
+            color: #ff0000;
+        }
+        ul li:last-child{
+            color: lime;
+        }
+        /*伪元素*/
+        .firstline{
+            width: 100px;
+            background-color: #dddddd;
+        }
+        .firstline:first-line{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+<div class="firstline">
+    在下面的例子中，段落的 第一个字母将显示为红色，其字体大小为 xx-large。第一行中的其余文本将为蓝色，并以小型大写
+</div>
+</body>
+</html>

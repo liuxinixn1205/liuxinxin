@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var which = window.confirm("不知道中午吃什么？");
+    if (which){
+        var a = Math.random();
+        a = a*10;
+        a = Math.floor(a);
+        switch(a){
+            case 1:
+                alert("土豆丝");
+                break;
+            case 2:
+                alert("鱼香肉丝");
+                break;
+            case 3:
+                alert("宫保鸡丁");
+                break;
+            case 4:
+                alert("麻辣鳕鱼");
+                break;
+            case 5:
+                alert("锅包肉");
+                break;
+            case 6:
+                alert("刀鱼");
+                break;
+            case 7:
+                alert("火锅");
+                break;
+            case 8:
+                alert("撸串");
+                break;
+            case 9:
+                alert("烧烤");
+                break;
+            default:
+                alert("拉皮");
+
+        }
+    }else {
+        alert("知道你还问。");
+    }
+
+</script>
+</body>
+</html>

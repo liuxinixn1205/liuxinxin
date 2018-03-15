@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        .test1{
+            background-color: red;
+        }
+        .test2{
+            background-color: blue;
+        }
+        .test3{
+            background-color: green;
+        }
+        .box{
+            background-color: #ff00ff;
+            width: 1000px;
+            /*消除每个方块之间的空隙 但存在兼容性问题*/
+            /*font-size: 0;*/
+            /*溢出隐藏，在父级元素中，可以清除float的浮动。但不是应用在这里*/
+            /*overflow: hidden;*/
+        }
+        p{
+            width: 200px;
+            height: 200px;
+            /*block 把行级元素转换成块级元素 inline 把块级元素转换成行级元素 inline-block 行内块级元素*/
+            /*要用这种方法使方块横向排列，会使每个方块之间存在空隙 不会脱离文档流*/
+            /*display: inline-block;*/
+            /*块级水平排列用float 脱离文档流*/
+            float: left;
+        }
+        /*行级元素不能设置高宽*/
+        /*span{*/
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*background-color: aqua;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<!--<span>文本</span>-->
+<div class="box">
+    <p class="test1">1</p>
+    <p class="test2">2</p>
+    <p class="test3">3</p>
+</div>
+
+</body>
+</html>
