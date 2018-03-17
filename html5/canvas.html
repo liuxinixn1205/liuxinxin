@@ -14,16 +14,17 @@
     </style>
 </head>
 <body>
+<!--设置高与宽应采用内联样式。如果没有采用内联样式，那么它的内容将会变得扭曲；设置颜色可以使用内部样式。-->
 <canvas width="400" height="400" id="box"></canvas>
 <script>
     var oBox = document.querySelector("#box");
     var context = oBox.getContext("2d");
-    context.beginPath();
+    context.beginPath();//开始画布；
     context.moveTo(10,10);//x轴 y轴从10像素开始
     context.lineTo(100,100);//到100像素结束
-    context.lineWidth = 10;//线的宽度
+    context.lineWidth = 10;//线的宽度，没有单位
     context.strokeStyle = "#ffffff";//线的颜色
-    context.stroke();
+    context.stroke();//
 
     context.beginPath();
     context.moveTo(100,100);

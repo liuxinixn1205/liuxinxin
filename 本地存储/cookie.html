@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var timer = new Date();
+//    timer.setDate(timer.getDate()+10);//获取当前时间+10；
+//    console.log(timer.toUTCString());//将时间转换成字符串；
+//    document.cookie = "school=heigongcheng;expires="+timer.toUTCString();//设置cookie
+//    document.cookie = "home=haerbin;expires="+timer.toUTCString();
+//    document.cookie = "school=aa";
+//    console.log(document.cookie);//获取cookie；
+//    timer.setDate(timer.getDate()-11);//删除cookie；
+//    document.cookie = "school=heigongcheng;expires="+timer.toUTCString();//设置cookie
+//    console.log(document.cookie);//获取cookie；
+
+    function setCookie(key,value,expires) {
+        var timer = new Date();
+        timer.setDate(timer.getDate()+expires);
+        var str = key+"="+value+";expires="+timer.toUTCString();
+        document.cookie = str;
+    }
+
+   function getCookie(key) {
+       var arr = document.cookie.split(";");
+       for (var i=0;i<arr.length;i++){
+           if(arr[i].split("=")[0].trim()==key){//结果中含有空格，相当于把字符串中的前后空格都去掉。
+               return arr[0].split("=")[1];
+           }
+       }
+   }
+   function delCookie(key) {
+       var timer = new Date();
+       timer.setDate(timer.getDate()-1);
+       var str = key+"=null;expires="+timer.toUTCString();
+   }
+   //console.log( document.cookie);
+
+    setCookie("school1","linda",10);
+    console.log(getCookie("school1"));
+    delCookie("school1");
+    console.log(getCookie("school1"));
+
+
+</script>
+</body>
+</html>
