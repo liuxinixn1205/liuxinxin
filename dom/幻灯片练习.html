@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>幻灯片</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        body{
+            background-color: #333333;
+        }
+        .box{
+            width: 1200px;
+            height: 400px;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            margin: 20px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: #ffffff;
+            position: relative;
+        }
+        .img-bar{
+            height: 400px;
+            overflow: hidden;
+        }
+        .radiu-btn {
+            position: absolute;
+        }
+        .radiu-btn li{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            background-color: #f90;
+            opacity: 0.7;
+            filter: alpha(opacity=70);
+            float: left;
+            line-height: 40px;
+            text-align: center;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .left-bt{
+            left: 30px;
+            bottom: 30px;
+        }
+        .right-btn{
+            right: 30px;
+            bottom: 30px;
+        }
+        .radiu-btn .active{
+            background-color: #f60;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="contetn">
+    <div class="img-bar">
+        <ul>
+            <li><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>
+            <li><img src="img/5.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div>
+        <ul class="radiu-btn left-bt">
+            <li this-type="prev">&lt;</li>
+            <li this-type="next">&gt;</li>
+        </ul>
+    </div>
+    <div>
+        <ul class="radiu-btn right-btn">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var oContetn = document.getElementById("contetn");
+    var aUl = document.getElementsByTagName("ul");
+    var aImg = aUl[0].getElementsByTagName("li");
+    var aLbt = aUl[1].getElementsByTagName("li");
+    var aRbt = aUl[2].getElementsByTagName("li");
+    var globalIndex = 0;
+    var isInterval = true;
+
+    function changeImg(index) {
+        if(index == 5){
+            index = 0;
+            globalIndex = 0;
+        }
+        if(index == -1){
+            index=4;
+            globalIndex=4;
+        }
+        for(var j=0;j<aRbt.length;j++){
+            aRbt[j].className = "";
+            aImg[j].style.display = "none";
+        }
+        aRbt[index].className = "active";
+        aImg[index].style.display = "block";
+    }
+
+    oContetn.onmouseover =function () {
+        isInterval = false;
+    };
+    oContetn.onmouseout = function () {
+        isInterval = true;
+    };
+    setInterval(function () {
+        if(isInterval){
+            changeImg(globalIndex++);
+        }
+    },1000);
+
+
+    for(var i=0;i<aRbt.length;i++){
+        aRbt[i].index = i;
+        aRbt[i].onmouseover =function () {
+            globalIndex =this.index;
+            changeImg(globalIndex);
+        }
+    }
+
+    for(var k=0;k<aLbt.length;k++){
+        aLbt[k].onclick =function () {
+            var thisType = this.getAttribute("this-type");
+            if(thisType=="next"){
+                changeImg(++globalIndex)
+            }else{
+                changeImg(--globalIndex);
+            }
+        }
+    }
+</script>
+</body>
+</html>

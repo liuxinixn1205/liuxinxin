@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+            border: 1px solid #dddddd;
+            width: 150px;
+            text-align: center;
+            display: none;
+            position: absolute;
+        }
+        ul li{
+            border-bottom: 1px solid #dddddd;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul-menu" class="ul-cn">
+    <li links="www.baidu.com">跳转</li>
+    <li links="www.sina.com">设置待办</li>
+    <li>设置已读</li>
+    <li>设置未读</li>
+    <li>删除邮件</li>
+</ul>
+<input type="text" id="test-input" value="hello">
+<script>
+   var oUL = document.getElementById("ul-menu");
+   var aLi = document.getElementsByTagName("li");
+   var oInput = document.getElementById("test-input");
+
+
+   alert(oInput.value);
+   //事件三要素 事件源、事件处理函数、事件对象。
+   document.oncontextmenu =function (e) {//鼠标右键事件   e为鼠标事件,存在兼容性问题，ie6,7,8不识别
+       e = e || window.event; //使浏览器全兼容。
+       oUL.style.display = "block";
+       oUL.style.top = e.clientY+"px";//别忘了加单位。
+       oUL.style.left = e.clientX+"px";
+       return false;//阻止浏览器的默认行为。
+   };
+   document.onclick = function () {
+       oUL.style.display = "none";
+   };
+   for(var i=0;i<aLi.length;i++){
+       aLi[i].onclick = function () {
+           var thisLink = this.getAttribute("links");//获取当前标签的属性，可以获取自定义属性。
+           location.href = "http://"+thisLink;
+           var text = this.innerText;
+           alert(text);
+       }
+   }
+</script>
+</body>
+</html>

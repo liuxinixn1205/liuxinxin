@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+    <style>
+        select{
+            width: 200px;
+            height: 250px;
+        }
+        select option{
+            font-size: 14px;
+            margin-top: 2px;
+        }
+        #right{
+            position: absolute;
+            left: 300px;
+            top:8px;
+        }
+        button{
+            width: 200px;
+            margin-top: 5px;
+            background-color: #bbbbbb;
+        }
+
+    </style>
+</head>
+<body>
+<div id="left">
+    <select multiple="multiple" name="" id="box-left">
+        <option value="">选项1</option>
+        <option value="">选项2</option>
+        <option value="">选项3</option>
+        <option value="">选项4</option>
+        <option value="">选项5</option>
+        <option value="">选项6</option>
+        <option value="">选项7</option>
+    </select><br/>
+    <button id="select-right">选中添加到右边&gt;&gt;</button><br/>
+    <button id="all-right">全部添加到右边&gt;&gt;</button>
+</div>
+<div id="right">
+
+    <select multiple="multiple" name="" id="box-right">
+        <option value="">选项8</option>
+    </select><br/>
+    <button id="select-left">&lt;&lt;选中删除到左边</button><br/>
+    <button id="all-left">&lt;&lt;全部删除到左边</button>
+</div>
+<script>
+    $("#select-right").click(function () {
+        $("option:selected").appendTo("#box-right");
+    })
+    $("#all-right").click(function () {
+        $("option").appendTo("#box-right");
+    })
+    $("#select-left").click(function () {
+        $("option:selected").appendTo("#box-left");
+    })
+    $("#all-left").click(function () {
+        $("option").appendTo("#box-left");
+    })
+    $("#box-left").on("dblclick","option",function () {
+        $("option:selected").appendTo("#box-right");
+    })
+    $("#box-right").on("dblclick","option",function () {
+        $("option:selected").appendTo("#box-left");
+    })
+</script>
+
+</body>
+</html>

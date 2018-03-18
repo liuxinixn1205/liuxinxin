@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width:150px;
+            height: 50px;
+            background-color: #ff6700;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<script>
+    var aDiv = document.getElementsByClassName("box");
+
+    for(var i=0;i<aDiv.length;i++){
+        aDiv[i].index = i;
+        aDiv[i].onmouseover = function () {
+            var This = this;
+            clearInterval(This.timer);
+            this.timer = setInterval(function () {
+                if(aDiv[This.index].offsetWidth == 600){
+                    clearInterval(This.timer);
+                }else{
+                    aDiv[This.index].style.width = aDiv[This.index].offsetWidth+10+"px";
+                }
+            },10)
+        };
+        aDiv[i].onmouseout = function () {
+            var This = this;
+            clearInterval(This.timer);
+           this.timer = setInterval(function () {
+               if(aDiv[This.index].offsetWidth == 200){
+                   clearInterval(This.timer);
+               }else {
+                   aDiv[This.index].style.width = aDiv[This.index].offsetWidth-10+"px";
+               }
+            },10)
+        }
+    }
+
+
+
+
+//封装函数的方法
+//    var timer;
+//    for(var i= 0;i<aDiv.length;i++){
+//        changeWidth(aDiv[i])
+//    }
+//
+//    function changeWidth(object) {
+//        object.onmouseover = function () {
+//            clearInterval(object.timer);
+//            object.timer =  setInterval(function(){
+//                if(object.offsetWidth == 950){
+//                    clearInterval(object.timer);
+//                }else {
+//                    object.style.width = object.offsetWidth+10+"px";
+//                }
+//            },50)
+//        };
+//        object.onmouseout = function () {
+//            clearInterval(object.timer);
+//            object.timer = setInterval(function (){
+//                if(object.offsetWidth == 150){
+//                    clearInterval(object.timer);
+//                }else{
+//                    object.style.width = object.offsetWidth-10+"px";
+//                }
+//            },50);
+//        };
+//    }
+
+</script>
+</body>
+</html>

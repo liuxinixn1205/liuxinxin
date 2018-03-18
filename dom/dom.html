@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            color: #ff6600;
+        }
+        .active{
+            background-color: #FF0000;
+        }
+    </style>
+</head>
+<body>
+<div id="testDiv" class="testClass">点击</div>
+<div class="ddd"></div>
+<ul>
+    <li class="active">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<script>
+//    var a = document.getElementById("testDiv");
+//    a.onmouseover = function () {
+//        a.className = "aa";
+//    }
+
+   var a = document.getElementsByTagName("li");
+   for(var i=0;i<a.length;i++){
+       a[i].onmouseover = function () {
+           for(var j=0;j<a.length;j++){
+               a[j].className = "";
+           }
+          this.className = "active";
+       }
+   }
+
+//    a.onclick = function () {
+//        a.style.color = "red";
+//    }
+//    var b = document.getElementsByClassName("testClass");
+//    var c = document.getElementsByTagName("div")[1];
+   // var d = document.getElementsByTagName("ul");
+    //var e = d[0].firstChild;
+//   console.log(c.previousSibling);
+//    b[0].onclick = function () {
+//        console.log("1");
+//    };
+</script>
+</body>
+</html>

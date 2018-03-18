@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+    <style>
+        .div1{
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        .div3{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">
+    <div class="div2">
+        <div class="div3"></div>
+    </div>
+</div>
+<script>
+    var aDiv1 = document.getElementsByClassName("div1")[0];
+    var aDiv2 = document.getElementsByClassName("div2")[0];
+    var aDiv3 = document.getElementsByClassName("div3")[0];
+
+
+
+//    aDiv1.onclick = function () {
+//        console.log("div1");
+//    }
+//    aDiv2.onclick = function (e) {
+//        console.log("div2");
+//        e.stopPropagation();//阻止冒泡事件
+//    }
+//    aDiv3.onclick = function () {
+//        console.log("div3");
+//    }
+//    aDiv1.addEventListener("click",function () {
+//        console.log("div1")
+//    })
+//    aDiv2.addEventListener("click",function () {
+//        console.log("div2")
+//    })
+
+
+
+    //可以多重定义，不会被覆盖
+//    aDiv3.addEventListener("click",function () {
+//        console.log("div3")
+//    })
+//    aDiv3.addEventListener("click",function () {
+//        console.log("div3-1")
+//    })
+
+//匿名函数并不是同一个函数
+//    function fn1() {
+//        console.log("div1")
+//    }
+//    aDiv1.addEventListener("click",fn1)
+//    aDiv3.addEventListener("click",function () {
+//        console.log("div3");
+//    })
+//    aDiv3.removeEventListener("click",function () {
+//
+//    })
+
+
+
+
+//    aDiv1.addEventListener("click",function () {
+//        console.log("div1")
+//    },true)
+//    aDiv2.addEventListener("click",function () {
+//        console.log("div2")
+//    },true)
+//    aDiv3.addEventListener("click",function () {
+//        console.log("div3")
+//    },true)//事件捕获//先捕获，后冒泡；
+
+
+//    function fn1() {
+//        console.log("div1")
+//    }
+//    aDiv1.addEventListener("click",fn1);
+//   aDiv1.removeEventListener("click",fn1)
+
+
+
+//    aDiv1.attachEvent("onclick",function () {
+//        console.log("div1");
+//    })
+//    aDiv2.attachEvent("onclick",function () {
+//        console.log("div2");
+//    })
+//    aDiv3.attachEvent("onclick",function () {
+//        console.log("div3");
+//    })
+
+
+//    function fn3() {
+//        console.log("div3");
+//        console.log(this);
+//    }
+//    aDiv1.attachEvent("onclick",function () {
+//        fn3.call(oDiv3);
+//    });
+
+
+
+//封装add
+    aDiv3 = function () {
+        console.log("div3");
+    };
+    function fn1() {
+        console.log("1");
+      }
+//    addEvent(aDiv3,"click",fn1);
+//    function addEvent(elem,eve,fun) {
+//        if (elem.addEventListener){//能力测试
+//            elem.addEventListener(eve,fun);
+//        }else if(elem.attachEvent){
+//            elem.addEventListener("on"+eve,fun);
+//        }
+//    }
+
+    addEvent(aDiv3,"click",fn1);
+    function addEvent(elem,eve,fun) {
+        if (elem.addEventListener){//能力测试
+            elem.addEventListener(eve,fun);
+        }else if(elem.attachEvent){
+             elem[fun] = function () {
+                fun.call(elem);
+            };
+            elem.addEventListener("on"+eve,elem[fun]);
+        }else {
+            elem["on"+eve] = fun;
+        }
+    }
+    aDiv3.onclick = function () {
+        fn1();
+    }
+
+    //封装remove
+//    aDiv3 = function () {
+//        console.log("div3");
+//    };
+//    function fn1() {
+//        console.log("1");
+//    }
+    function removeEvent(elem,eve,fun) {
+        if(elem.removeEventListener){
+            elem.removeEventListener(eve,fun);
+        }else if(detachEvent){
+            elem.removeEventListener("on"+eve,elem[fun]);
+        }else{
+            elem["on"+eve]=null;
+        }
+    }
+
+</script>
+</body>
+</html>

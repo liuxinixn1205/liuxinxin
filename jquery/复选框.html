@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<h1>你爱好的运动是？</h1>
+<input type="checkbox">足球
+<input type="checkbox">排球
+<input type="checkbox">篮球
+<input type="checkbox">羽毛球
+<div>
+    <button id="abtn">全选</button>
+    <button id="bbtn">全不选</button>
+    <button id="fbtn">反选</button>
+
+</div>
+<script>
+    var $aBtn = $("#abtn");
+    var $bBtn = $("#bbtn");
+    var $fBtn = $("#fbtn");
+    var $input = $("input");
+    
+    $aBtn.click(function () {
+        $input.prop("checked",true);
+    });
+    $bBtn.click(function () {
+        $input.prop("checked",false);
+    });
+//    $fBtn.click(function () {
+//        for(var i=0;i<$input.length;i++){
+//            if($input.eq(i).prop("checked")){
+//                $input.eq(i).prop("checked",false);
+//            }else{
+//                $input.eq(i).prop("checked",true);
+//            }
+//        }
+//    });
+//    $fBtn.click(function () {
+//        $input.each(function (index,elem) {
+//            if($(elem).prop("checked")){
+//                $(elem).prop("checked",false)
+//            }else{
+//                $(elem).prop("checked",true);
+//            }
+//        })
+//    });
+    $input.each(function (index,elem) {
+        elem.checked = !elem.checked;
+    })
+//    var person={
+//        name:"xiaohong",
+//        age:"11",
+//        school:"heigongcheng"
+//    }
+//    //把原生的变成jquery对象。
+//    //$("#aa").get(0)把jQuery转换成原生。
+//    $(person).each(function (index,elem) {
+//        console.log(index);
+//        console.log(elem);
+//    })
+</script>
+
+</body>
+</html>

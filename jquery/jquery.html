@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+    <p ></p>
+</div>
+<div>
+    <a href="">2222</a>
+</div>
+
+<script>
+    $("p:empty").html("hhhhhhh");//判断谁为空，在空标签里添加值
+    $("div:has('p')").html("你好");//判断div下是否有p
+    $("p:parent").html("你好");//判断谁不为空，选中
+    $("p:visible").html("你好");//可见的
+    $("p:hidden").html("你好");//选中文档内所有被隐藏的标签。
+    $("p[class^='aa']").html("你好");//className以aa开头
+    $("p[class*='aa']").html("你好");//包含aa的
+    $("p[class~='aa']").html("你好");//用空格分隔的
+    $("p[class~='aa'][class*='aa'] ").html("你好");//可以并列中间没有符号
+    $("p:first-child").html("你好");//把第一标签的内容用你好代替。如果第一个不是p就无法选中，如果就想选中第一个，就用下一个
+    $("p:first-of-type").html("你好");//
+    $("p:last-child").html("你好");
+    $("p:last-of-type").html("你好");
+    $("p:nth-child(1)").html("你好");//下标索引从1开始。
+    $("p:nth-child(4)").toggleClass("ee");//没有就加上ee，有就去掉ee。
+
+
+</script>
+</body>
+</html>

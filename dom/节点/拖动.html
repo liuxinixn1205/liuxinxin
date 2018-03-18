@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖动</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: #d32f2f;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="box">王敏和贾文雪</div>
+
+</body>
+<script>
+    var oBox = document.getElementById("box");
+    oBox.onmousedown = function (e) {
+        var thisX = e.clientX-oBox.offsetLeft;
+        var thisY = e.clientY-oBox.offsetTop;
+        document.onmousemove = function(e){
+            oBox.style.left = e.clientX-thisX+"px";
+            oBox.style.top = e.clientY-thisY+"px";
+        };
+        oBox.onmouseup = function () {
+            document.onmousemove = null;
+        }
+    };
+</script>
+</html>

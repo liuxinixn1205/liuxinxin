@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body >
+<!--<div id="box">1</div>-->
+<!--<span class="aa">11</span>-->
+<!--<a href="">22</a>-->
+<div id="box">
+<span>11</span>
+
+   <!--释 注-->
+<span>22</span>
+</div>
+<script>
+
+    var oBox = document.getElementById("box");
+    var aSpan = document.getElementsByTagName("span")[0];
+
+
+    var sPan2 = next(aSpan);
+    function next(obj) {
+        var nextNode = obj;
+        do{
+            nextNode = nextNode.nextSibling;
+        } while(nextNode && nextNode.nodeType != 1)
+        return nextNode;
+    }
+    console.log(sPan2);
+
+
+
+
+</script>
+</body>
+</html>

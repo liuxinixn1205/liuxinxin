@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #b0b0b0;
+            margin: 30px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id = "time-bar">
+    <h1 id="timer-area">100</h1>
+    <button id="btn">开始</button>
+</div>
+
+<script>
+
+
+//    var oNum = document.getElementById("num");
+//    var i = 0;
+//    var timer;
+//    timer = setInterval(function () {
+//        console.log(i);
+//        i++;
+//        if(i>=100){
+//            clearInterval(timer);
+//        }
+//
+//    },1000);
+    var oTimer = document.getElementById("timer-area");
+    var oBtn = document.getElementById("btn");
+    var num = 100;
+    var key = 1;
+    var timer ;
+
+  function changeNum() {
+        oTimer.innerText = num;
+        num--;
+    }
+
+
+    oBtn.onclick = function () {
+        if(key==1){
+            timer = setInterval("changeNum()",1000);
+            this.innerText = "暂停";
+
+        }else{
+            clearInterval(timer);
+            this.innerText = "开始";
+        }
+       key *= -1;
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签div属性</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width: 245px;
+            margin: 20px auto;
+        }
+        input{
+           width: 45px;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <input type="button" value="变宽">
+    <input type="button" value="变高">
+    <input type="button" value="变色">
+    <input type="button" value="隐藏">
+    <input type="button" value="重置">
+    <div id="div1"></div>
+</div>
+<script>
+    var aBtn = document.getElementsByTagName("input");
+    var oDiv = document.getElementById("div1");
+    var arr1 = ["width","height","background-color","display"];
+    var arr2 = ["300px","300px","#ff6900","none"];
+
+    for(var i=0;i<aBtn.length;i++){
+        aBtn[i].index = i;
+        aBtn[i].onclick = function () {
+            var styleName = arr1[this.index];
+            var styleVal = arr2[this.index];
+            oDiv.style[styleName] = styleVal;
+            this.index == 4 ? oDiv.style.cssText = "" : oDiv.style[styleName] = styleVal;
+
+        }
+    }
+</script>
+</body>
+</html>

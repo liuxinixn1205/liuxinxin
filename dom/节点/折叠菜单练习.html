@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        #box{
+            border: 1px solid #000000;
+            width: 200px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        #box div{
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li >
+            <div>管理区</div>
+            <ul style="display: none">
+                <li >001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+        <li>
+            <div>交流区</div>
+            <ul style="display: none">
+                <li>001</li>
+                <li>002</li>
+                <li>003</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+    var oBox = document.getElementById("box");
+   var aDiv = oBox.getElementsByTagName("div");
+
+   for(var i =0;i<aDiv.length;i++){
+       aDiv[i].onclick = function () {
+           var nextNode = next(this);
+           if(nextNode.style.display=="none"){
+               nextNode.style.display = "block";
+           }
+           else{
+               nextNode.style.display = "none";
+           }
+       }
+   }
+
+        function next(obj) {
+            var nextNode = obj;
+            do{
+                nextNode = nextNode.nextSibling;
+            } while(nextNode && nextNode.nodeType != 1)
+            return nextNode;
+        }
+
+</script>
+</body>
+</html>

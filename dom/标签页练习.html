@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签页</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        .top{
+            width: 500px;
+            background-color: #333333;
+        }
+        .top li{
+            float: left;
+            background-color: #dddddd;
+
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul id="tab">
+        <li>第一课</li>
+        <li>第二课</li>
+        <li>第三课</li>
+    </ul>
+    <div class="content">
+        <ul class="">
+            <li>网页特效原理分析</li>
+            <li>网页特效原理分析</li>
+            <li>网页特效原理分析</li>
+            <li>网页特效原理分析</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>第二页</li>
+            <li></li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<script>
+    var oTab = document.getElementById("tab");
+    var aTabLi = oTab.getElementsByTagName("li");
+    var aUl = document.getElementById("content").getElementsByTagName("ul");
+
+    for(var i=0;i<aTabli.length;i++){
+        aTabli[i].index = i;
+       oTabLi[i].onmouseover = function () {
+           for(var j=0;j<oTabLi.length;j++){
+               oTabLi[j].className  = "";
+               this.className = "active";
+               oUl[j].onmouseover.display = "none";
+           }
+       }
+    }
+</script>
+</body>
+</html>

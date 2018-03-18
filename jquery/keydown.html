@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<input type="text" id = "vals" value="">
+    <p>vivo x5</p>
+    <p>vivo x7</p>
+    <p>vivo pro</p>
+    <p>vivo x9</p>
+    <p>vivo x20</p>
+    <p>vivo x9s</p>
+    <p>vivo x7plus</p>
+<script>
+    $("#vals").keyup(function () {
+        $("p").css("background","none");
+        if($(this).val()!=""){
+            $("p:contains("+$(this).val()+")").css("background-color","red");
+        }
+    });
+
+
+</script>
+</body>
+</html>

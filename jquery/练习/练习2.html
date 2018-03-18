@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+    <style>
+        textarea{
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="animate-big">放大</button>
+    <button id="animate-small">缩小</button>
+    <div>
+        <textarea name="textarea" id="textarea" cols="30" rows="10">放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小放大缩小</textarea>
+    </div>
+</body>
+<script>
+    $("#animate-big").click(function () {
+        $("#textarea").animate({
+            rows: "+=30"
+        }, 5000)
+    })
+    $("#animate-small").click(function () {
+        $("#textarea").animate({
+            rows: "-=10"
+        }, 5000)
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<style>
+    div{
+        margin-top: 5px;
+        font-size: 20px;
+    }
+
+    input{
+        outline: none;
+    }
+    textarea{
+        outline: none;
+    }
+    .focus{
+        border: 1px solid #dddddd;
+        background-color: #ff6700;
+        opacity: 0.7;
+    }
+
+</style>
+<body>
+<form action="">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label for="username">名称：</label>
+            <input type="text" id="username" class="" value="名称">
+        </div>
+        <div>
+            <label for="password">密码：</label>
+            <input type="password" id="password" class="" value="123">
+        </div>
+        <div>
+            <label for="information">详细信息：</label>
+            <textarea id="information" class="" >详细信息</textarea>
+        </div>
+    </fieldset>
+</form>
+</body>
+<script>
+
+    //练习focus和blur
+//   $(":input").focus(function () {
+//       $(this).addClass("focus");
+//   }).blur(function () {
+//       $(this).removeClass("focus");
+//   })
+
+
+    //练习defaultValue和value
+$(":input").focus(function () {
+    $(this).addClass("focus");
+    if($(this).val()==this.defaultValue){
+        $(this).val("");
+    }
+}).blur(function () {
+    $(this).removeClass("focus");
+    if($(this).val()==this.value){
+        $(this).val(this.defaultValue);
+    }
+})
+
+</script>
+
+</html>

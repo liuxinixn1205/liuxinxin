@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn1">添加</button>
+<ul id="ul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+    <button id="btn">append</button>
+<div id="box">
+    <div>11</div>
+    <div>22</div>
+</div>
+
+
+</body>
+<script>
+    var oUl = document.getElementById("ul");
+    var aLi = oUl.getElementsByTagName("li");
+    var oBtn = document.getElementById("btn1");
+    var oBox = document.getElementById("box");
+    var oBtn1= document.getElementById("btn");
+    var aDiv = oBox.getElementsByTagName("div");
+
+    oBtn1.onclick = function () {
+        var aDiv1 = document.createElement("div");
+        aDiv1.innerHTML="11";
+        oBox.appendChild(aDiv1);
+    };
+
+
+
+
+    oBtn.onclick = function () {
+        var oNewNode = document.createElement("li");
+        oNewNode.innerHTML="nihao";
+        oUl.appendChild(oNewNode);
+    };
+
+    oUl.onclick = function (e) {
+        var eve = e||window.event;
+        var This =window.event.srcElement||e.target;
+        //var This = e.target;
+        console.log(This.innerHTML);
+    }
+</script>
+</html>

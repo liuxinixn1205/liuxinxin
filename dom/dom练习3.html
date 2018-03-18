@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跳转页面</title>
+    <style>
+        p{
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<p><input type="text" placeholder="请输入网址"></p>
+<p><button>跳转</button></p>
+<script>
+    var aInput = document.getElementsByTagName("input");
+    var aBtn = document.getElementsByTagName("button");
+    aBtn[0].onclick = function () {
+        var thisVal = aInput[0].value;
+        location.href = "http://"+thisVal;
+    };
+    aInput[0].onkeydown = function (e) {
+        var thisVal = aInput[0].value;
+        var keyCode = e.keyCode;
+        if(keyCode == 13){
+            location.href = "http://"+thisVal;
+        }
+    }
+</script>
+</body>
+</html>

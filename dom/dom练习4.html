@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>记住密码提示框</title>
+    <style>
+        div{
+            width: 500px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        #border{
+            width:230px;
+            border: 1px solid #ff6700;
+            color: #000000;
+            background-color: #ffac13;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div><input type="checkbox">两周内自动登录</div>
+<div id="border">为了您的信息安全，请不要在网吧或公用电脑上使用此功能!</div>
+<script>
+    var aDiv = document.getElementsByTagName("div");
+    var oBor = document.getElementById("border");
+    aDiv[0].onmouseover = function () {
+        oBor.style.display = "block";
+    };
+    aDiv[0].onmouseout = function () {
+      oBor.style.display = "none";
+    }
+</script>
+</body>
+</html>

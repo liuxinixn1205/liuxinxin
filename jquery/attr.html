@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="div1" text-type="aaa">内容</div>
+<input type="checkbox" id="cb">
+</body>
+<script>
+//    $("#cb").prop("chkecked","true");
+//    $("#cb").attr("chkecked","checked");
+//
+//    var $div = $(".div1").attr("class");//自定义和自带属性都ok，隐士的取不到
+//    var $div = $(".div1").prop("class");//只能获取标签自带的属性，自定义的属性获取不到//能获取到对象隐士的一些状态
+//    console.log($attr);
+//    console.log($prop);
+
+    $("#cb").click(function () {
+        var $attr = $(this).attr("checkbox");
+        var $prop = $(this).prop("checkbox");
+        console.log("attr:"+$attr);
+        console.log("prop:"+$prop)
+    })
+</script>
+</html>
