@@ -22,8 +22,8 @@
               </div>
               <div class="login-content">
                   <div class="login-input">
-                      <input type="text" placeholder="邮箱/手机号码/小米ID">
-                      <input type="password" placeholder="密码">
+                      <input type="text" placeholder="邮箱/手机号码/小米ID" value="">
+                      <input type="password" placeholder="密码" value="">
                   </div>
                   <div class="login-btn">
                       <input type="submit" value="登录">
@@ -62,4 +62,33 @@
       </div>
   </div>
 </body>
+<script>
+    var oDiv = document.querySelector(".login-input");
+    var aIput = oDiv.querySelectorAll("input");
+    var oSub = document.querySelector(".login-btn");
+    var oInput = oSub.getElementsByTagName("input")[0];
+
+
+    function fun() {
+        sessionStorage.text = "刘昕昕";
+        sessionStorage.password = "123";
+        oInput.onclick = function () {
+            if(aIput[0].value==sessionStorage.text&&aIput[1].value==sessionStorage.password){
+                location.href = "http://www.baidu.com";
+            }else if(aIput[0].value==sessionStorage.text||aIput[1].value==sessionStorage.password){
+                alert("用户名或者密码输入错误");
+            }else if(aIput[0].value==""||aIput[1].value==""){
+                alert("请输入用户名或者密码")
+            }else {
+                alert("用户名或者密码错误")
+            }
+        }
+    }
+    fun();
+
+
+
+
+
+</script>
 </html>
