@@ -21,6 +21,7 @@
             border: 1px dashed #000000;
         }
         .clock{
+            list-style: none;
             width: 196px;
             height: 196px;
             border-radius: 50%;
@@ -85,15 +86,17 @@
     for(var i=0;i<60;i++){
         oClock.innerHTML+="<li style='transform: rotate("+6*i+"deg)'></li>";
     }
-    var timer = new Date();
-    var second = timer.getSeconds();
-    var minute = timer .getMinutes()+second/60;
-    var hour = timer.getHours()+minute/60;
+    clock();
+    function clock() {
+        var timer = new Date();
+        var second = timer.getSeconds();
+        var minute = timer .getMinutes()+second/60;
+        var hour = timer.getHours()+minute/60;
 
-
-    oSecond.style.transform = 'rotate('+6*second+'deg)';
-    oMinute.style.transform = 'rotate('+6*minute+'deg)';
-    oHour.style.transform = 'rotate('+30*hour+'deg)';
+        oSecond.style.transform = 'rotate('+6*second+'deg)';
+        oMinute.style.transform = 'rotate('+6*minute+'deg)';
+        oHour.style.transform = 'rotate('+30*hour+'deg)';
+    }
 
     setInterval(function () {
         clock();
