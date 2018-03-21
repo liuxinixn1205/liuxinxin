@@ -1,0 +1,89 @@
+$first:#ccc;
+.div1{
+  color: $first;
+  .div4{
+    margin: 0;
+    padding: 0;
+  }
+  &:hover{
+    color: $first;
+  }
+  &-aa{
+    background: #000;
+  }
+}
+.div3{
+  background: {
+    img: url('img/1.jpg');
+    color: red;
+  };
+}
+/*danhangzhushi*/
+//danhangzhushi
+/*! qiangzhizhushhi*/
+@mixin aa($h:300px,$w:400px){//morenzhi
+  width: $w;
+  height: $h;
+}
+.div5{
+  @include aa($w:700px,$h:800px);
+}
+.div6{
+  @extend  .div5;
+  font-size: 19px;
+}
+@import "imp";//yinyongyigewaibuwenjian
+$img:'1.jpg';
+.div7{
+  background-image: url("img/"+ $img);
+}
+$color:rgb(255,0,0);
+$color1:rgba(255,0,0,.8);
+.div7{
+  color: transparentize($color,.5);
+}
+$title:width;
+.div8{
+  #{$title}:100px;
+}
+$zs:"zhushi";
+/*zheshiyige #{$zs} */
+$sel:'.div9';
+#{$sel}{
+  width: 100px;
+}
+@for $i from 1 through 5{
+  @if($i==3){
+    .div-if3{
+      margin:0;
+    }
+  }@else {
+    .div-for#{$i}{
+      width: $i+px;
+    }
+  }
+}
+$list8:(one two three four);
+@each $var in $list8{
+  .div-#{$var}{
+    width: 10px;
+  }
+}
+$x:5 ;
+@while $x>0{
+  .box-#{$x}{
+    width: 10px;
+  }
+  $x:$x - 1;
+}
+@function fun($key){
+  @if(type-of($key)==string){
+    @warn 'nishurudeleixingbuzhengque';
+    @return 10px;
+  }@else {
+    @return $key+px;
+  }
+}
+.div10{
+  width: fun("3");
+}
