@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //创建正则表达的方法
+    // 第一种方法
+//  var  reg = /b/;
+//  var str = 'blueidea';
+//  console.log(reg.exec(str));
+    //第二种方法
+//    var reg = new RegExp('b');
+//    var str = 'blueidea';
+//    console.log(reg.exec(str));
+
+//    var reg = /c{1}/;//只能匹配一个c；
+//    var str = 'cainiao';
+//    console.log(reg.exec(str));//返回c
+
+//    var reg = /c{2}/;//能匹配两个连续的c；
+//    var str = 'cainiao';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /c{2}/;
+//    var str = 'ccVC果冻爽';
+//    console.log(reg.exec(str));//返回cc；
+
+//    var reg = /c{3,4}/;//匹配三个或四个c；
+//    var str = 'ccVC果冻爽';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /c{3,4}/;
+    //    var str = 'cccTest';
+    //    console.log(reg.exec(str));//返回ccc；
+
+//    var reg = /c{3,4}/;
+//    var str = 'ccccTest';
+//    console.log(reg.exec(str));//返回cccc；
+
+//    var reg = /c{3,4}/;
+//    var str = 'cccccTest';
+//    console.log(reg.exec(str));//返回cccc；
+
+//    var reg = /c{1,}/;//匹配连续一个以上的c；
+//    var str = 'cccccTest';
+//    console.log(reg.exec(str));//返回ccccc；
+
+//    var reg = /c{2,}/;
+//    var str = 'cainiao';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /c{1,}?/;//匹配最少的
+//    var str = 'ccccc';
+//    console.log(reg.exec(str));//返回c；
+
+//    var reg = /^c/;//匹配以c开头
+//    var str = '维生素c';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /^c/;
+//    var str = 'cianiao';
+//    console.log(reg.exec(str));//返回c；
+
+//    var reg = /c$/;//匹配以c结尾；
+//    var str = 'cianiao';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /c$/;
+//    var str = '维生素c';
+//    console.log(reg.exec(str));//返回c；
+
+//    var reg = /./;//匹配除了\n的所有字符，只返回一个
+//    var str = 'blueidea';
+//    console.log(reg.exec(str));//返回b；
+
+//    var reg = /.+/;//+匹配1个以上的字符
+//    var str = 'blueidea-经典论坛 好_。';
+
+//    var reg = /^./;//匹配开头不是换行字符的
+//    var str = '\ncainiao';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /b|c/;//匹配b或c；
+//    var str = 'blueidea';
+//    console.log(reg.exec(str));//返回b；
+
+//    var reg = /b|c/;
+//    var str = 'cainao';
+//    console.log(reg.exec(str));//返回c；
+
+//    var reg = /^b|c.+/;//匹配以b开头或是c.+
+//    var str = 'cainiao';
+//    console.log(reg.exec(str));//返回cainiao；
+
+//    var reg = /^b|c.+/;
+//    var str = 'bbs.blueidea.com';
+//    console.log(reg.exec(str));//返回b；
+
+//    var reg = /^(b|c).+/;//以b或c开头的.+;
+//    var str = 'bbs.blueidea.com';
+//    console.log(reg.exec(str));//返回bbs.blueidea.com
+
+//    var reg = /^[abc]/;//匹配a或b或c
+//    var str = 'bbs.blueidea.com';
+//    console.log(reg.exec(str));//返回b；
+
+//    var reg = /^[abc]/;
+//    var str = 'test';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /^[a-zA-Z0-9_]+/;//匹配小写大写或数字
+//    var str = 'blueidea';
+//    console.log(reg.exec(str));//返回blueidea；
+
+//    var reg = /[^abc]/;//^表示匹配除了a或b或c的字符
+//    var str = 'blueidea';
+//    console.log(reg.exec(str));//返回l；
+
+//    var reg = /[^abc]/;
+//    var str = 'cainiao';
+//    console.log(reg.exec(str));//返回i；
+
+//    var reg = /\bc/;//匹配边界值c。此时书写匹配左边界；
+//    var str = 'cainiao';
+//    console.log(reg.exec(str));//返回c
+
+//    var reg = /\bc/;//汉字不算在里面，所以c此刻左右边界都没有字符
+//    var str = '维生素c';
+//    console.log(reg.exec(str));//返回c；
+
+//    var reg = /\bc/;//此刻匹配左边界，c的左边界有字符；
+//    var str = 'abc';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /c\b/;//匹配c的右边界
+//    var str = 'abc';
+//    console.log(reg.exec(str));//返回c；
+
+//    var reg = /\bc/;
+//    var str = 'bcb';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /\Bc/;//匹配不在边界值
+//    var str = 'bcb';
+//    console.log(reg.exec(str));//返回c；
+
+//    var reg = /\Bc/;
+//    var str = 'cainiao';
+//    console.log(reg.exec(str));//返回null；
+
+//    var reg = /\d/;//匹配数字
+//    var str = 'cainiao8';
+//    console.log(reg.exec(str));//8；
+
+//    var reg = /\D/;//非数字
+//    var str = 'cainiao8';
+//    console.log(reg.exec(str));//返回c；
+
+//    var reg = /\s.+/;//匹配空格
+//    var str = 'This is a test String';
+//    console.log(reg.exec(str));//返回  is test String；
+
+//    var reg = /\S+/;//匹配除了空格；
+//    var str = 'This is a test String';
+//    console.log(reg.exec(str));//返回This
+
+//    var reg = /\w+/;//匹配单词字符
+//    var str = 'blueidea';
+//    console.log(reg.exec(str));//返回blueidea；
+
+//    var reg = /\W+/;//匹配非单词字符
+//    var str = '中文如何？';
+//    console.log(reg.exec(str));//返回中文如何？
+
+//    var reg = /(\w)(\w)/;
+//    var str = 'blueidea';
+//    console.log(reg.exec(str));//返回bl
+
+//    var reg = /(\w)\1/;
+//    var str = 'blueidea';
+//    console.log(reg.exec(str));//返回null
+
+//    var reg = /(\w)\1/;
+//    var str = 'bbs.blueidea.com';
+//    console.log(reg.exec(str));//返回bb
+
+//    var reg = /(\w)(\w)\2\1/;
+//    var str = 'woow';
+//    console.log(reg.exec(str));//返回woow
+
+//    var reg = /^(?:b|c).+/;//是括号里的内容没有意义
+//    var str = 'bbs.blueidea.com';
+//    console.log(reg.exec(str));//返回bbs.blueidea.com
+
+//    var reg = /^(?:b|c)\1/;//是括号里的内容没有意义
+//    var str = 'bbs.blueidea.com';
+//    console.log(reg.exec(str));//返回null
+
+//    var reg = /cainiao(?=8)/;
+//    var str = 'cainiao9';
+//    console.log(reg.exec(str));//返回null
+
+//    var reg = /cainiao(?=8)/;
+//    var str = 'cainiao8';
+//    console.log(reg.exec(str));//返回cainiao
+
+//    var reg = /blue(?!idea)/;
+//    var str = 'blueidea';
+//    console.log(reg.exec(str));//返回null
+
+//    var reg = /c\*/;//\表示转义
+//    var str = 'c*';
+//    console.log(reg.exec(str));//返回c*
+
+//    var reg = /b/i;//不区分大小写
+//    var str = 'BBs';
+//    console.log(reg.exec(str));//返回B
+
+//    var reg = /^b/m;
+//    var str = 'test\nbbs';
+//    console.log(reg.exec(str));//返回b
+
+//    var reg = /b/i;
+//    var str = 'BBs';
+//    console.log(reg.test(str));//返回true test返回布尔类型
+
+//    var reg = /c/;
+//    var str = 'abfoclojjw';
+//    console.log(str.search(reg));//返回4
+
+//    var reg = /b/;
+//    var str = 'bbs.blueidea.com';
+//    console.log( str.replace(reg,'c'));//返回cbs.blueidea.com
+
+//    var reg = /b/g;//g表示全局
+//    var str = 'bbs.blueidea.com';
+//    console.log( str.replace(reg,'c'));//返回ccs.clueidea.com
+</script>
+</body>
+</html>
