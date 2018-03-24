@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        header,nav,footer{
+            height: 100px;
+            background-color: #b0b0b0;
+            width: 100%;
+            max-width: 960px;
+            margin: 10px auto;
+            text-align: center;
+            line-height: 100px;
+            font-size: 50px;
+            color: #ffffff;
+        }
+        article,img{
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            display: block;
+        }
+        section{
+            height: 300px;
+            text-align: center;
+            display: table;
+            float: left;
+        }
+        p{
+            /*只能设置行级元素*/
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+
+        }
+        .right{
+            background-color: #ffff00;
+            width: 25%;
+            margin-left: 5%;
+        }
+        .left{
+            background-color: #00ff00;
+            width: 70%;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        @media(max-width: 600px){
+            .clearfix section{
+                width: 100%;
+                margin: 10px 10px 0 0 ;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>页头</header>
+<nav>导航</nav>
+<article>
+    <img src="../img/1.jpg" alt="">
+</article>
+<article class="clearfix">
+    <section class="left">
+        <p>Though people have been always educated to save water, we can see they waste water all the time. For example, sometimes I can see children wash their hands for a long time and when they go away, they always forget to close the faucet. The most common situation I see is in the public toilet that people just walk away after using faucet and they don’t meant to close it. They are wasting water and they should be condemned. Water conservation is in need because in most part of the world, people don’t have enough water and we need water to keep alive. On March 22nd , which is a day to call for the public to save water, if not, we will face the emergent situation. So it is everybody’s duty not to waste water.</p>
+    </section>
+    <section class="right">
+        <p>Though people have been always educated to save water, we can see they waste water all the time. For example, sometimes I can see children wash their hands for a long time and when they go away, they always forget to close the faucet.</p>
+    </section>
+</article>
+<footer>页脚</footer>
+
+
+</body>
+</html>
