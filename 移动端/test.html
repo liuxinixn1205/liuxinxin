@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width,user-scalable=no,initial-scale=1.0，maximum-scale=1.0,minium-scale=1.0">-->
+    <!--width=device-width设备宽度 也可以直接写数值，但是不能有像素-->
+    <!--user-scalable有两个值一个是yes一个是no，问是否可以缩放 默认值是yes-->
+    <!--initial-scale=1.0页面初始化时的缩放比-->
+    <!--maximum-scale=1.0,minium-scale=1.0最大缩放比和最小缩放比-->
+    <!--一般网页不会允许缩放，因为会影响页面的清晰度-->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .div1{
+           width: 100%;
+           height: 100px;
+           background: #000000;
+           max-width: 1200px;
+           min-width: 500px;
+           margin: 0 auto;
+       }
+        @media (max-width: 500px) {
+            #div1{
+                background: #FF0000;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="div1" id="div1"></div>
+</body>
+</html>
