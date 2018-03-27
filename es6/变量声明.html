@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="oul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script>
+//    var str = "a";
+//   function foo() {
+//       console.log(str);
+//       var str = "b";
+//   }
+//   foo();
+
+//    function foo() {
+//        var str = "a";
+//        return str;
+//    }
+//    var oStr = foo();
+//    console.log(oStr);
+
+    //闭包；函数里嵌套函数，内部函数可以访问外部函数的变量，并且不被释放；有链级作用域，子对象会一级一级往上找父级的变量。
+//    var oUL = document.getElementById("oul");
+//    var aLI = document.getElementsByTagName("li");
+//
+//    for(var i=0;i<aLI.length;i++){
+//        (function (key) {
+//            console.log(key);
+//            aLI[i].onclick = function () {
+//                console.log(key);
+//            }
+//        })(i);
+//    }
+
+//    function fun1() {
+//        var a="123";
+//        function fun2() {
+//            console.log(a);
+//        }
+//        return fun2();
+//    }
+//   var foo = fun1();
+//    foo();
+
+//    function foo1() {
+//        var a = "123";
+//        function foo2() {
+//            function foo3() {
+//                console.log(a);
+//            }
+//            foo3();
+//        }
+//        foo2();
+//    }
+//    foo1();
+
+    //let没有变量提升机制，不可以重复声明。
+//    console.log(a);
+//    let a = "12";
+
+//    let a = "3";
+//    let a = "aa";
+//    console.log(a);
+
+
+//在a被声明之前不能被使用，成为暂时性死区；
+//    function foo() {
+//        a="12";
+//        console.log(a);
+//
+//
+//        let a = "1";
+//    }
+//
+
+//let有块级作用域
+//    if(true){
+//        let a =0;
+//    }
+//    console.log(a);
+
+    //const定义常量；
+//    const a = "3";
+//    a = 5;
+//    console.log(a);
+
+//对象为引用类型；
+//    const obj = {
+//        name:"xiaoming",
+//        age:"17"
+//    };
+//    const obj2 = {
+//        name :"aa"
+//    };
+//    obj = obj2;
+//    console.log(obj);
+
+//    const obj = {
+//        name:"xiaoming",
+//        age:"17"
+//    };
+//    Object.freeze(obj);
+//    obj.name = "aaa";
+//    console.log(obj);
+
+
+
+</script>
+
+</body>
+</html>
