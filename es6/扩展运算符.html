@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //不确定参数
+//    function foo() {
+//        console.log(arguments[0])
+//    }
+//    foo(4,5,6);//返回结果4
+
+//    function foo(arg1) {
+//        console.log(arg1);
+//    }
+//    foo(4,6);//返回结果
+
+
+    //剩余的
+//    function foo(arg1,...arg) {//...相当于扩展运算符，剩余的运算符都接受
+//        console.log(arg1,arg);
+//    }
+//    foo(4,6,7,8,9);//返回结果 4 [6789]
+
+    //作为数组的一部分
+//    let arr = [3,5,];
+//    let arr2 = [6,...arr,7];
+//    console.log(arr2);//结果 6 3 5 7
+
+    //作为数组的复制
+//    let arr1 = [3,4];
+//    let arr2 = arr1;
+//    console.log(arr2);//结果 [3,4]
+
+//    let arr1=[3,4];
+//    let arr2 = arr1;
+//    arr1[0] = 9;
+//    console.log(arr2);//结果 [9,4]  数组和对象都为引用类型 shu属于浅克隆；
+
+//    let arr = [3,4];
+//    let arr2 = [...arr];
+//    arr[0] = 9;
+//    console.log(arr2);//结果 [3,4]深克隆；
+
+    //合并对象
+//     let obj = {
+//         name:"xiaoming",
+//         home:"heb"
+//     };
+//     let obj1 ={
+//         name:"huahua",
+//         age:"17"
+//     };
+//     let obj3 = {...obj,...obj1};
+//     obj1.name = "xiaohong";
+//     console.log(obj3);//结果 name huahua home heb age 17；深克隆取代了extend
+
+    //解构
+    let [a,b,...c]=[1,2,3,4,5,6,7];
+    console.log(a,b,c);//结果 1 2 [3 4 5 6 7];
+
+
+
+    //数组的合并
+//    let arr1 = [1,2];
+//    let arr2 = [3,4];
+//    console.log(arr1.concat(arr2));//concat 连接两个或更多的数组，并返回结果；
+//    //返回结果 [1,2,3,4]
+
+//    let arr1 = [1,2];
+//    let arr2 = [3,4];
+//    let arr3 = [...arr1,...arr2];
+//    console.log(arr3);//返回结果[1,2,3,4]
+ </script>
+</body>
+</html>

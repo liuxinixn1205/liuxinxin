@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //解构赋值；
+
+    //数组的解构赋值；
+//   let arr = [3,5,8];
+//   let a,b,c;
+//   a = arr[0];
+//   b = arr[1];
+//   c = arr[2];
+//    let[a,b,c] = [3,5,8];
+//    let[a,b,c] = arr;
+//   console.log(a,b,c);//返回结果3 5 8
+
+//    let [a,b,c] = [4,5,6,7];
+//    console.log(a,b,c);//返回结果 4 5 6
+
+//    let [a,b,c] = [3,[4,5],6];
+//    console.log(a,b,c);//返回结果 3 [4 5] 6；
+
+//    let [a,[b,c],d] = [3,[4,5],6];
+//    console.log(a,b,c,d);//返回结果 3 4 5 6；
+
+
+    //对象解构；
+//    var obj = {
+//        name:"xiaoming",
+//        age:"17"
+//    };
+//    let name = obj.name;
+//    let age = obj.age;
+//    console.log(name,age);
+
+//    let {name,age} = {name:"xiaoming",age:"17"};
+//    console.log(name,age);//返回结果 xiaoming 17；
+
+
+//    var obj = {
+//           name:"xiaoming",
+//           age:"17"
+//        };
+//    let {name,age} = obj;
+//    console.log(name,age);//返回结果 xiaoming 17；
+
+//        var obj = {
+//               name:"xiaoming",
+//               age:"17"
+//            };
+//        let {a,b} = obj;
+//        console.log(a,b);//返回结果 undefined  undefined
+
+
+//        var obj = {
+//               name:"xiaoming",
+//               age:"17"
+//            };
+//        let {name:a,age:b} = obj;
+//        console.log(a,b);//返回结果 xiaoming 17；
+
+
+    //字符串解构；
+//    var str = "hello world";
+//    console.log(str.charAt(0));//charAt可以返回指定位置的字符
+
+//    var str = "hello world";
+//    console.log(str[0]);//返回结果 h；
+
+//    let str = "hello world";
+//    let[a,b,c,d] = str;
+//    console.log(a,b,c,d);//返回结果 h e l l ;
+
+    //函数参数的解构赋值
+//    function foo(a,b) {
+//        console.log(a+b);
+//    }
+//    foo(4,5);//返回结果9；
+
+//    function foo(a,b) {
+//        console.log(a+b);
+//    }
+//    foo([4,5]);//返回结果[4,6] undefined
+
+//    function foo(a,b) {
+//        console.log("a="+a,"b="+b);
+//    }
+//    foo([4,5]);//返回结果 a = [4,5];b=undefined;
+
+//    function foo([a,b]) {
+//        console.log("a="+a,"b="+b);
+//        console.log(a+b);
+//    }
+//    foo([4,5]);//返回结果 9；
+
+//    var obj = {
+//        name:"xiaoming",
+//        age:"17"
+//    };
+//   function foo(obj) {
+//       console.log(obj.name);
+//       console.log(obj.age);
+//   }
+//   foo(obj);//返回结果 xiaoming 17
+
+//    function foo({name,age}) {
+//        console.log(name);
+//        console.log(age);
+//    }
+//    foo({name:"xiaoming",age:"17"});//返回结果 xiaoming 17
+
+//    function foo({name:a,age:b,school="heida"}) {//此处赋值是默认值
+//        console.log(a);
+//        console.log(b);
+//        console.log(school);
+//    }
+//    foo({name:"xiaoming",age:"17",school:"linda"});//返回结果 xiaoming 17 linda
+
+    //函数返回值的解构
+//    function  foo() {
+//        return "123";
+//    }
+//    let a=foo();
+//    console.log(a);//返回结果123
+
+//    function  foo() {
+//        return "123";
+//    }
+//    let [a,b,c]=foo();
+//    console.log(a,b,c);//返回结果 1 2 3
+
+    //变量互换
+//    let a = 4;
+//    let b = 5;
+//
+//    let key = a;
+//    a = b;
+//    b = key;
+//    console.log(a,b);//返回结果 5 4
+
+//    let a= 4;
+//    let b= 5;
+//     a= a+b;
+//     b= a-b;
+//     a=a-b;
+//     console.log(a,b);//返回结果 5 4
+
+//    let a= 4;
+//    let b= 5;
+//    [a,b] = [b,a];
+//    console.log(a,b);//返回结果 5 4
+
+//    let a=4;
+//    let b=5;
+//    a=[b,b=a][0];
+//    console.log(a,b);
+    //等同于
+//    let a=4;
+//    let b=5;
+//    let arr = [b,b=a];
+//    a= arr[0];
+//    console.log(a,b);
+
+    //json的应用
+//    let jsonStr = '{name:"xiaoming",age:"17"} ';
+//    let [a,b,c,d] = jsonStr;
+//    console.log(a,b,c,d);//返回 { n a m
+
+//    let jsonStr = '{"name":"xiaoming","age":"17"} ';
+//    let {name,age} = JSON.parse(jsonStr);
+//    console.log(name,age);//返回结果 xiaoming 17
+
+</script>
+</body>
+</html>
