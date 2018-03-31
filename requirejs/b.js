@@ -1,6 +1,3 @@
 /**
- * Created by Administrator on 2018/3/17 0017.
+ * Created by Administrator on 2018/3/27 0027.
  */
-define(function () {
-    alert("1")
-})
