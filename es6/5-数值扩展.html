@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let n = 5;//101
+        // console.log(n.toString(2));//将10进制转化成二进制  十进制==>任意进制
+
+        // let m = 101;//5
+        // console.log(parseInt(m,2));// 任意进制==>十进制；
+        
+        //二进制0B 八进制0O
+        // let n = 0B101;
+        // console.log(n);
+
+        // let m = 0O111;
+        // console.log(m);
+        
+        //Number.isFinite判断是否为数字
+        // console.log(Number.isFinite(5));//true
+        // console.log(Number.isFinite(null));//false
+        // console.log(Number.isFinite(undefined));false
+        // console.log(Number.isFinite(NaN));//false
+        // console.log(Number.isFinite('5'));//false
+        // console.log(Number.isFinite('a'));//false
+        // console.log(Number.isFinite(5/0));//false
+
+        //Number.isNaN  是不是个数
+        // console.log(Number.isNaN(5));//false
+        // console.log(Number.isNaN(NaN));//true
+        
+        // Number.isInteger  是不是个整数
+        // console.log(Number.isInteger(5));//true
+        // console.log(Number.isInteger(5.5));//false
+
+        // Number.parseInt  将字符串转化为数值（整型）
+        // Number.parseFloat 将字符串转化成数值（浮点型）
+        // console.log(Number.parseInt('8.5'));// 8
+        // console.log(Number.parseFloat('8.9'));//8.9
+        
+        //pow(x,y)  x的y次幂。
+        //整数的最大数。2的53次幂 这个数-1就是安全的数，最小的数就是-2的53次幂。
+        // let max = Math.pow(2,53)
+        // console.log(max);
+        // console.log(max+1);
+        // console.log(max-1);
+        // // Number.isSafeInteger判断一个数是一个安全的数
+        // console.log(Number.isSafeInteger(max));
+        // console.log(Number.isSafeInteger(max-1));
+        // console.log(Number.MAX_SAFE_INTEGER);//最大安全的数
+        // console.log(Number.MIN_SAFE_INTEGER);//最小安全的数
+        
+        
+        console.log(Math.trunc(5.5));//去除一个数的小数部分，返回整数部分。
+        console.log(Math.sign(5));//判断一个数到底是正数、负数、还是0；
+        console.log(Math.sign(0));
+        console.log(Math.sign(-1));
+        
+        
+        
+        
+        
+        
+        
+
+    </script>
+</body>
+</html>

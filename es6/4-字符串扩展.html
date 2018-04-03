@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    //let str = 'abc';// new String('abc');
+
+    // let a = 5, b=6;
+    // let str = 'asdklkc'+a+'lvkvjkhumkxhxch'+b+'ssoacjcjusoksj';
+    // console.log(str);
+
+    //模板字符串（反引号）
+    // let a = 5, b=6;
+    // let str = `asdklkc${a}lvkvjkhu<h3>h3</h3>mkxhxch${b}ssoacjcjusoksj`;//模板字符串（反引号）：${} 支持标签、换行、数学运算。
+    // let str2 = `${a}+${b}=${a+b}`;//数学运算
+    // document.getElementById('div1').innerHTML = str;//添加标签
+    // console.log(str2);
+    
+    //indexof
+    // let str = 'hello world';
+    // console.log(str.indexOf('a'));//indexof检索字符串，不包含返回-1 包含返回索引
+    // console.log(str.indexOf('world'));//返回6
+    // let str1 = 'hello wNaNorld';
+    // console.log(str1.indexOf('NaN'));//返回7
+    // //includes
+    // console.log(str.includes('llo'));//返回 true  返回的是布尔类型boolean
+    // console.log(str.includes('woo'));//返回false
+    
+
+    // //startwith
+    // console.log(str.startsWith('hello'));//返回true
+    // //endwith
+    // console.log(str.endsWith('world'));//返回true
+
+    // //封装 startwith 和 endwith
+    // //startwith
+    // String.prototype.sw = function (str) {
+    //     if(this.indexOf(str) == 0){
+    //         return true;
+    //     }
+    //     return false;
+    // };
+    // console.log(str.sw('hhello'));
+    //  //endwith
+    // String.prototype.ew = function (str) {
+    //     if(this.indexOf(str) == this.length - str.length){
+    //         return true;
+    //     }
+    //     return false;
+    // };
+    // console.log(str.ew('worldf'));
+    
+    //padStart 和 padEnd  (pad有填充的意思)
+    let str = 'xy';
+    console.log(str.padStart(5,'abc'));//padStart从开始的位置填充，第一个参数表示字符串的总长度，第二个是填充的字符串  返回 abcxy
+    console.log(str.padStart(7,'abc'));//返回abcabxy
+    console.log(str.padStart(4,'abc'));//返回abxy
+
+    console.log(str.padEnd(7,'abc'));//返回 xyabcab；
+    //repeat
+    console.log(str.repeat(2));//返回 xyxyxyxyxy
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+</script>
+</body>
+</html>
