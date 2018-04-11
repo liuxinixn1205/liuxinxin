@@ -4,61 +4,71 @@
     <meta charset="UTF-8">
     <title>标签页</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         ul{
-            list-style-type: none;
+            list-style: none;
         }
-        .top{
-            width: 500px;
-            background-color: #333333;
+        .box{
+            width: 300px;
+            border: 1px solid;
+            margin: 100px auto;
         }
-        .top li{
+        #tab li{
+            width: 100px;
+            height: 30px;
+            background-color: #000;
+            color: #ffffff;
             float: left;
-            background-color: #dddddd;
-
+            text-align: center;
+            line-height: 30px;     
+        }
+        #tab .active{
+            background-color: #cccccc;
+            color: #000;
         }
     </style>
 </head>
 <body>
-<div>
-    <ul id="tab">
-        <li>第一课</li>
-        <li>第二课</li>
-        <li>第三课</li>
-    </ul>
-    <div class="content">
-        <ul class="">
+    <div class="box">
+        <ul id="tab">
+            <li class="active">第一课</li>
+            <li>第二课</li>
+            <li>第三课</li>
+        </ul>
+        <ul class="content">
+            <li>第一页</li>
             <li>网页特效原理分析</li>
             <li>网页特效原理分析</li>
             <li>网页特效原理分析</li>
             <li>网页特效原理分析</li>
         </ul>
-    </div>
-    <div>
-        <ul>
+        <ul class="content">
             <li>第二页</li>
-            <li></li>
+            <li>改变网页背景颜色</li>
         </ul>
-    </div>
-    <div>
-        <ul>
-            <li></li>
+        <ul class="content">
+            <li>第三页</li>
+            <li>JavaScript组成：ECMAScript、DOM、BOM、javaScript兼容性来源</li>
         </ul>
-    </div>
-</div>
-<script>
+    </div> 
+<script> 
     var oTab = document.getElementById("tab");
-    var aTabLi = oTab.getElementsByTagName("li");
-    var aUl = document.getElementById("content").getElementsByTagName("ul");
-
-    for(var i=0;i<aTabli.length;i++){
-        aTabli[i].index = i;
-       oTabLi[i].onmouseover = function () {
-           for(var j=0;j<oTabLi.length;j++){
-               oTabLi[j].className  = "";
-               this.className = "active";
-               oUl[j].onmouseover.display = "none";
-           }
-       }
+    var aLi = oTab.getElementsByTagName("li");
+    var aUl = document.getElementsByClassName("content");
+    
+    for(var i = 0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onclick = function(){
+            for(var i =0 ;i<aLi.length;i++){
+                aLi[i].className = "";
+                aUl[i].style.display = "none";
+            }   
+            this.className = "active";
+            aUl[this.index].style.display = "block";
+        }
     }
 </script>
 </body>
