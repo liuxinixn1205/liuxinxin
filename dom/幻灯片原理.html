@@ -2,130 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
     <style>
         *{
             margin: 0;
-            padding:0;
+            padding: 0;
         }
-        .clearfix:after{
-            content: "";
-            display: block;
-            clear: both;
+        li{
+            list-style: none;
         }
-        ul{
-            list-style-type: none;
-        }
-        body{
-            background-color: #000000;
-        }
-        .box{
-            border: 1px solid #dddddd;
-            border-radius: 10px;
-            width: 800px;
+        #container{
+            width: 500px;
             height: 300px;
-            margin: 10px auto;
-            padding: 10px;
-            background-color: #ffffff;
+            border: 1px solid #000;
+            margin: 50px auto;
             position: relative;
-            overflow: hidden;
         }
-        .img-bar img{
-            width: 800px;
+        #imgs img{
+            width: 500px;
             height: 300px;
+            display: none;
         }
-        .box .img-bar ul{
-            width: 4050px;
+        #imgs .selected{
+            display: block;
         }
-        .img-bar ul li{
-            float: left;
-            margin-right: 10px;
+        #tab{
+            height: 20px;
         }
-        .radiu-btn {
-            position: absolute;
-        }
-        .radiu-btn li{
-            float: left;
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-            border-radius: 50%;
-            background-color: #f90;
-            opacity: 0.7;
-            line-height: 30px;
-            text-align: center;
-            font-size: 18px;
+        #tab li, #arrows span{
+            width: 20px;
+            height: 20px;
+            background: #000;
             color: #ffffff;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 2px;
+            float: left;
         }
-        .radiu-btn .active{
-            background-color: #f60;
+        #tab{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
         }
-        .left-bt{
-            left: 20px;
-            bottom: 20px;
+        #tab .active{
+            background: #ff9600;
         }
-        .right-btn{
-            right: 20px;
-            bottom: 20px;
-        }
-
+        #arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }  
     </style>
 </head>
 <body>
-<div class="box" id="contetn">
-    <div class="img-bar">
-        <ul class="clearfix">
-            <li><img src="img/1.jpg" alt=""></li>
-            <li><img src="img/2.jpg" alt=""></li>
-            <li><img src="img/3.jpg" alt=""></li>
-            <li><img src="img/4.jpg" alt=""></li>
-            <li><img src="img/5.jpg" alt=""></li>
-        </ul>
-    </div>
-    <div>
-        <ul class="radiu-btn left-bt">
-            <li this-type="prev">&lt;</li>
-            <li this-type="next">&gt;</li>
-        </ul>
-    </div>
-    <div>
-        <ul class="radiu-btn right-btn">
+    <div id="container">
+        <div id="imgs">
+            <img src="img/1.jpg" alt="" class="selected">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            <img src="img/5.jpg" alt="">
+        </div>
+        <ul id="tab">
             <li class="active">1</li>
             <li>2</li>
             <li>3</li>
             <li>4</li>
             <li>5</li>
         </ul>
+        <div id="arrows">
+            <span id="prev">&lt;</span>
+            <span id="next">&gt;</span>
+        </div>
     </div>
-</div>
+    <script>
+        var oContainer = document.getElementById('container');
+        var oTab = document.getElementById('tab');
+        var aLi = oTab.getElementsByTagName('li');
+        var oImgs = document.getElementById('imgs');
+        var aImg = oImgs.getElementsByTagName('img');
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+        var isNowIndex = 0;
+        var timer;
 
-<script>
-    var aUl = document.getElementsByTagName("ul");
-    var aImg = aUl[0].getElementsByTagName("li");
-    var aLtn = aUl[1].getElementsByTagName("li");
-    var aRtn = aUl[2].getElementsByTagName("li");
-    var globalIndex = 0;
-
-    function changeImg(index) {
-        for(var j=0;j<aRtn.length;j++){
-            aRtn[j].className = "";
-        }
-        aRtn[index].className ="active";
-       var timer =  setInterval(function () {
-            if(aImg[i].offsetleft == -index*800){
-                clearInterval(timer);
-            }else{
-                aImg[index].style.left = aImg[index].offsetLeft - 10+"px";
+        for(var i = 0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function () {
+                isNowIndex = this.index;
+                changeImg();
             }
-        },10)
-    }
-    for(var i=0;i<aRtn.length;i++){
-        aRtn[i].index = i;
-        aRtn.onmouseover = function () {
-            changeImg(this.index);
-            globalIndex = this.index;
+        };
+        oPrev.onclick = oNext.onclick = function (){
+            if(this == oPrev){
+                isNowIndex--;
+                if(isNowIndex == -1){
+                    isNowIndex = aLi.length-1;
+                }
+            }else{
+                isNowIndex++;
+                if(isNowIndex == aLi.length){
+                    isNowIndex = 0;
+                }
+            }
+            changeImg();        
+        };
+        oPrev.onselectstart = oNext.onselectstart = function (){
+            return false;
         }
-    }
-</script>
+        play();
+        oContainer.onmouseover = function (){
+            clearInterval(timer);
+        };
+        oContainer.onmouseout = function (){
+            play();
+        };
+        function changeImg(){
+            for(var i = 0;i<aLi.length;i++){
+                aLi[i].className = "";
+                aImg[i].className = "";
+            }
+            aLi[isNowIndex].className = "active";
+            aImg[isNowIndex].className = "selected";
+        };
+        function play() {
+            timer = setInterval(function (){
+                oNext.onclick();
+            },1000);
+        };
+
+    
+    </script>
 </body>
 </html>
