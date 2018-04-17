@@ -2,66 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <style>
-       *{
-           margin: 0;
-           top: 0;
-       }
-        ul{
-            list-style-type: none;
-            border: 1px solid #dddddd;
-            width: 150px;
-            text-align: center;
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #menu{
+            width: 120px;
+            border: 1px solid #000;
             display: none;
             position: absolute;
+            left: 0;
+            top: 0;
         }
-        ul li{
-            border-bottom: 1px solid #dddddd;
-        }
+        #menu li{
+            height: 30px;
+            border-bottom: 1px dashed #ccc;
+            text-align: center;
+            line-height: 30px;
+        }   
     </style>
 </head>
 <body>
-<ul id="ul-menu" class="ul-cn">
-    <li>设置待办</li>
-    <li>设置已读</li>
-    <li>设置未读</li>
-    <li>删除邮筒</li>
-</ul>
-<script>
+    <ul id="menu">
+        <li>打开</li>
+        <li>下载</li>
+        <li>分享</li>
+        <li>复制</li>
+        <li>删除</li>
+        <li>重命名</li>
+    </ul>
+    <script>
+        var oUl = document.getElementById('menu');
+        document.oncontextmenu = function (e) {
+            oUl.style.display = "block";
+            oUl.style.left = e.clientX + 'px';
+            oUl.style.top = e.clientY + 'px';
 
-   var oUl =  document.getElementById("ul-menu");
-   var aLi =  document.getElementsByTagName("li");
-//   var aUlCn = document.getElementsByClassName("ul-cn");
-//   console.log(oUL);
-//   console.log(aUL);
-//   console.log(aULCn);
-
-//事件三要素  事件源  事件处理函数   事件对象
-
-//shubiaoyoujian
-document.oncontextmenu = function (e) {
-    oUl.style.display = "block";
-//    console.log(e.clientX);
-    oUl.style.top = e.clientY+"px";
-    oUl.style.left = e.clientX+"px";
-
-    return false;//阻止浏览器默认行为。
-
-};
-document.onclick = function () {
-    oUl.style.display = "none";
-};
-for(var i = 0;i<aLi.length;i++){
-    aLi[i].onclick = function () {
-      //  var thisLink = this.getAttribute("links");//当前标签的属性。
-//        location.href = "http//"+;
-        var thisText = this.innerText;//带标签  innerText  只取文字。
-        console.log(thisText);
-
-
-    }
-}
-</script>
+            return false;
+        }
+        document.onclick = function () {
+            oUl.style.display = 'none';
+        }
+    
+    
+    
+    </script>
 </body>
 </html>
