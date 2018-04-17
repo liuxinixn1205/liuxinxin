@@ -2,81 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <style>
-        div {
-            width:150px;
+        div{
+            width: 100px;
             height: 50px;
-            background-color: #ff6700;
-            margin: 30px;
+            background-color: #ff0000;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-<div class="box"></div>
-<div class="box"></div>
-<div class="box"></div>
-<script>
-    var aDiv = document.getElementsByClassName("box");
+   <div id="div1"></div> 
+   <div id="div2"></div> 
+   <div id="div3"></div> 
 
-    for(var i=0;i<aDiv.length;i++){
-        aDiv[i].index = i;
-        aDiv[i].onmouseover = function () {
-            var This = this;
-            clearInterval(This.timer);
-            this.timer = setInterval(function () {
-                if(aDiv[This.index].offsetWidth == 600){
-                    clearInterval(This.timer);
-                }else{
-                    aDiv[This.index].style.width = aDiv[This.index].offsetWidth+10+"px";
-                }
-            },10)
+   <script>
+        var oDiv1 = document.getElementById('div1');
+        var oDiv2 = document.getElementById('div2');
+        var oDiv3 = document.getElementById('div3');
+        var timer;
+        
+        bigger(oDiv1);
+        bigger(oDiv2);
+        bigger(oDiv3);
+        function bigger(elem){
+            elem.onmouseover = function (){
+                clearInterval(elem.timer);
+                elem.timer = setInterval(function (){
+                    elem.style.width = elem.offsetWidth + 10 + 'px';
+                    if(elem.offsetWidth >= 500){
+                        clearInterval(elem.timer);
+                    }    
+                },30);
+            };
+            elem.onmouseout = function (){
+                clearInterval(elem.timer);
+                elem.timer = setInterval(function (){
+                    elem.style.width = elem.offsetWidth - 10 + 'px';
+                    if(elem.offsetWidth <=100){
+                        clearInterval(elem.timer);
+                    }
+                },30);
+            }
         };
-        aDiv[i].onmouseout = function () {
-            var This = this;
-            clearInterval(This.timer);
-           this.timer = setInterval(function () {
-               if(aDiv[This.index].offsetWidth == 200){
-                   clearInterval(This.timer);
-               }else {
-                   aDiv[This.index].style.width = aDiv[This.index].offsetWidth-10+"px";
-               }
-            },10)
-        }
-    }
-
-
-
-
-//封装函数的方法
-//    var timer;
-//    for(var i= 0;i<aDiv.length;i++){
-//        changeWidth(aDiv[i])
-//    }
-//
-//    function changeWidth(object) {
-//        object.onmouseover = function () {
-//            clearInterval(object.timer);
-//            object.timer =  setInterval(function(){
-//                if(object.offsetWidth == 950){
-//                    clearInterval(object.timer);
-//                }else {
-//                    object.style.width = object.offsetWidth+10+"px";
-//                }
-//            },50)
-//        };
-//        object.onmouseout = function () {
-//            clearInterval(object.timer);
-//            object.timer = setInterval(function (){
-//                if(object.offsetWidth == 150){
-//                    clearInterval(object.timer);
-//                }else{
-//                    object.style.width = object.offsetWidth-10+"px";
-//                }
-//            },50);
-//        };
-//    }
-
-</script>
+        
+       
+   
+   
+   </script>
 </body>
 </html>
