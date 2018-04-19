@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        *{
+        /* *{
             margin: 0;
             padding:0;
         }
@@ -21,12 +21,75 @@
             background-color: #000000;
             color: #ffffff;
             font-size: 20px;
+        } */
+        *{
+            margin: 0;
+            padding: 0;
         }
-
+        li{
+            list-style: none;
+        }
+        #container div{
+            width: 200px;
+            height: 50px;
+            background: #000;
+            color: #ffffff;
+            font-size: 25px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #container{
+            width: 200px;
+            text-align: center;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        #container li li:hover{
+            background: #cccccc;
+        }
     </style>
 </head>
 <body>
-<div id="box">
+    <div id="container">
+        <ul>
+            <li>
+                <div>管理区</div>
+                <ul style="display:none">
+                    <li>001</li>
+                    <li>002</li>
+                    <li>003</li>
+                </ul>
+            </li>
+            <li>
+                <div>交流区</div>
+                <ul style="display:none">
+                    <li>001</li>
+                    <li>002</li>
+                    <li>003</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="../../jslib.js"></script>
+    <script>
+        var oContainer = document.getElementById('container');
+        var aDiv = oContainer.getElementsByTagName('div');
+
+        for(var i=0;i<aDiv.length;i++){
+            aDiv[i].onclick = function (){
+                var nextNode = next(this);
+                if(nextNode.style.display == 'none'){
+                    nextNode.style.display = 'block';
+                }else if(nextNode.style.display == 'block'){
+                    nextNode.style.display = 'none';
+                }     
+            }
+            aDiv[i].onselectstart = function (){
+                return false;
+            }
+        }; 
+    </script>
+<!-- <div id="box">
     <ul>
         <li >
             <div>管理区</div>
@@ -70,6 +133,6 @@
             return nextNode;
         }
 
-</script>
+</script> -->
 </body>
 </html>
