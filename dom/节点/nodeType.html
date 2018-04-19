@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div><!-- 这是一个注释 -->
+    <div id="div2"></div>
+
+    <ul id="ul1">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        console.log(oDiv1.nextSibling);//下一个兄弟节点  结果为#text 节点；有兼容性问题
+        console.log(oDiv1.nextElementSibling);//下一个兄弟元素  结果为 <div id="div2"></div>
+
+        var oDiv2 = document.getElementById('div2');
+        console.log(oDiv2.previousSibling);//上一个兄弟节点  结果为#text 节点；有兼容性问题；
+        console.log(oDiv2.previousElementSibling);//上一个兄弟元素  结果为<div id="div1"></div>
+        
+
+        var oUl1 = document.getElementById('ul1');
+        console.log(oUl1.firstChild);// 第一个孩子节点 结果为 #text 有兼容性问题；
+        console.log(oUl1.firstElementChild);//第一个孩子元素   结果为<li>001</li>
+        console.log(oUl1.lastChild);//最后一个孩子节点  结果为#text 有兼容性问题；
+        console.log(oUl1.lastElementChild);//最后一个孩子元素   结果为<li>004</li>
+        
+        //不同的节点有不同的节点类型 （nodeType）
+        console.log(oUl1.firstChild.nodeType);//文本节点 的节点类型 是  3
+        console.log(oUl1.firstElementChild.nodeType);//元素节点 的节点类型 是 1
+        console.log(oDiv1.nextSibling.nodeType);//注释的节点类型是 8
+
+        console.log(oUl1.children);//没有兼容性问题
+
+
+        //封装函数  找到elem的下一个兄弟元素节点；
+        function next(elem){
+            do{
+                elem = elem.nextSibling;
+            }while(elem && elem.nodeType != 1);
+            return elem;
+        };
+
+
+        //封装函数   找到elem的第一个孩子元素；
+        function first(elem){
+            elem = elem.firstChild;
+            return elem.nodeType == 1? elem : next(elem);
+        };       
+    </script>
+</body>
+</html>
