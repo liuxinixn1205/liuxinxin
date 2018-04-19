@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <ul id="ul1">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+    <ul id="ul2">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+            <li>004</li>
+    </ul>
+    <div id="div2">
+        <div class="aa">11</div>
+        <div class="aa">22</div>
+    </div>
+
+    <form action="">
+        用户名:<input type="text" name="username">
+        密码： <input type="password" name="pwd">
+        爱好：
+            <input type="checkbox" name="hobby" id="">足球
+            <input type="checkbox" name="hobby" id="">排球
+            <input type="checkbox" name="hobby" id="">篮球
+            
+        <input type="submit" value="">
+    </form>
+    <h1>信管15-1班</h1>
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        console.log(oDiv1);
+        
+        var oUl1 = document.getElementById('ul1');//无兼容性问题
+        var aLi = oUl1.getElementsByTagName('li');//无兼容性问题
+        console.log(aLi);
+        
+        var oDiv2 = document.getElementById('div2');
+        var aA = oDiv2.getElementsByClassName('aa');
+        var aa = document.getElementsByClassName('aa');//有兼容性问题 
+        console.log(aA);
+        console.log(aa);
+
+
+        console.log( document.getElementsByName('hobby'));//有兼容性问题
+        var oDiv22 = document.querySelector('#div2');
+        console.log(oDiv22);
+        var aH1 = document.querySelector('h1');//多个时，只能取到一个；存在兼容性问题的；
+        console.log(aH1);
+        var allA = document.querySelectorAll('.aa');//多个时，可以取到所有的，但是有兼容性问题；
+        console.log(allA);
+        
+               
+        //封装函数 byClassName，通过class的名字获取元素
+        var result = getByClassName ('aa',oDiv2);
+        console.log(result);
+        
+        function getByClassName(clsName,context) {
+            context = context || document;
+            if(context.getElementsByClassName){
+                return context.getElementsByClassName(clsName);
+            }else{
+                var allList = context.getElementsByTagName('*');
+                var result = [];
+                for(var i=0;i<allList.length;i++){
+                    //暂时还不完善,完整的需要用到正则表达式；
+                    if(allList[i].className.indexOf(clsName) != -1){
+                        result.push(allList[i]);
+                    }
+                }
+                return result;
+            }
+        };   
+    </script>
+</body>
+</html>
