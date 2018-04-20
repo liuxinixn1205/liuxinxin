@@ -2,32 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>拖动</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <style>
-        #box{
-            width: 200px;
-            height: 200px;
-            background-color: #d32f2f;
-            position: absolute;
+        *{
+            margin: 0;
+            padding: 0;
         }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }  
     </style>
 </head>
 <body>
-<div id="box">王敏和贾文雪</div>
+    <div id="box"></div>
+    <script>
+        var oBox = document.getElementById('box');
 
-</body>
-<script>
-    var oBox = document.getElementById("box");
-    oBox.onmousedown = function (e) {
-        var thisX = e.clientX-oBox.offsetLeft;
-        var thisY = e.clientY-oBox.offsetTop;
-        document.onmousemove = function(e){
-            oBox.style.left = e.clientX-thisX+"px";
-            oBox.style.top = e.clientY-thisY+"px";
-        };
-        oBox.onmouseup = function () {
-            document.onmousemove = null;
+        oBox.onmousedown = function (e){
+            var thisX = e.clientX - oBox.offsetLeft;
+            var thisY = e.clientY - oBox.offsetTop;
+            document.onmousemove = function (e){
+                oBox.style.left = e.clientX - thisX + 'px';
+                oBox.style.top = e.clientY - thisY + 'px';
+            };
+            oBox.onmouseup = function (){
+                document.onmousemove = null;
+            }
         }
-    };
-</script>
+    
+    
+    </script>
+</body>
 </html>
