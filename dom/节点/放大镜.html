@@ -6,136 +6,86 @@
     <style>
         *{
             margin: 0;
-            padding: 0;
+             padding: 0;
         }
-        body{
-            background-color: #666666;
-        }
-        img {
-            display: block;
-        }
-       .small-img{
-           position: relative;
-           float: left;
-       }
-        .move-bar{
+        #small-img , #big-img{
             float: left;
-            width: 200px;
-            height: 200px;
-            position: absolute;
-            left: 0;
-            top:0;
-            background-color: rgba(255,255,255,0.3);
         }
-        .big-img{
+        #small-img{
+            position: relative;
+        }
+        #big-img{
             width: 400px;
             height: 400px;
-            float: left;
-            position: relative;
             overflow: hidden;
+            display: none;
+            position: relative;
         }
-        .big-img img{
+        #big-img img{
             width: 800px;
             height: 800px;
             position: absolute;
+            top: 0;
+            left: 0;
         }
-    </style>
+        #move{
+            width: 200px;
+            height: 200px;
+            background:rgba(255,255,255,.5);
+            display: none;
+            cursor: move;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>    
 </head>
-
 <body>
-<div class="small-img" >
-    <img src="../img/small.jpg" alt="">
-    <div class="move-bar"></div>
-</div>
-<div class="big-img">
-    <img src="../img/small.jpg" alt="">
-</div>
-<script>
-   var oSmallImg = document.getElementsByTagName("div")[0];
-   var oMove = document.getElementsByClassName("move-bar")[0];
-   var oBigBox =  document.getElementsByClassName("big-img")[0];
-   var oBigImg = oBigBox.getElementsByTagName("img")[0];
+    <div id="small-img">
+       <img src="../img/small.jpg" alt="">
+       <div id="move"></div>
+    </div>
+    <div id="big-img">
+       <img src="../img/small.jpg" alt="" id="big-pic">
+    </div>
+     <script>
+        var oSmallImg = document.getElementById('small-img');
+        var oBigImg = document.getElementById('big-img');
+        var oMove = document.getElementById('move');
+        var oBigPic = document.getElementById('big-pic')
 
-
-   oSmallImg.onmousemove = function (e) {
-       var thisX = e.clientX - 100;
-       var thisY = e.clientY - 100;
-       if (thisX < 0) {
-           thisX =0;
-       }
-       if(thisY<0){
-           thisY= 0;
-       }
-       var maxLeft = oSmallImg.offsetWidth - oMove.offsetWidth;//small-move
-       var maxTop = oSmallImg.offsetHeight - oMove.offsetHeight;
-       if(thisX>maxLeft){
-           thisX=maxLeft;
-       }
-       if(thisY>maxTop){
-           thisY=maxTop;
-       }
-       oMove.style.left = thisX + "px";
-       oMove.style.top = thisY + "px";
-       oBigImg.style.left = -thisX*2+"px";
-       oBigImg.style.top =  -thisY*2+"px";
-   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   oSmallImg.onmouseover = function () {
-//       oMove.style.display = "block";
-//       oBigImg.style.display = "block";
-//   };
-//   oSmallImg.onmouseout = function () {
-//       oMove.style.display = "none";
-//       oBigImg.style.display = "none";
-//   }
-//   oSmallImg.onmousemove = function (e) {
-//       var top = e.clientY-oMove.offsetWidth/2;
-//       var left = e.clientX-oMove.offsetHeight/2;
-//       if(top<0){
-//           top=0;
-//       }
-//       if(left<0){
-//           left=0;
-//       }
-//       var maxTop = oSmallImg.offsetHeight - oMove.offsetHeight;
-//       var maxLeft = oSmallImg.offsetWidth - oMove.offsetWidth;
-//
-//       if(top>maxTop){
-//           top = maxTop
-//       }
-//       if(left>maxLeft){
-//           left = maxLeft;
-//       }
-//       oMove.style.left = left +"px";
-//       oMove.style.top = top+"px";
-//       oBigImg.style.left = -left*2+"px";
-//       oBigImg.style.top=-top*2+"px";
-//   }
+        oSmallImg.onmouseover = function (){
+            oMove.style.display = 'block';
+            oBigImg.style.display = 'block';
+        };
+        oSmallImg.onmouseout = function (){
+            oMove.style.display = 'none';
+            oBigImg.style.display = 'none';
+        };
+        oMove.onmousemove = function (e){
+            var left = e.clientX - oMove.offsetWidth/2;
+            var top = e.clientY - oMove.offsetHeight/2;
+            var maxLeft = oSmallImg.offsetWidth - oMove.offsetWidth;
+            var maxTop = oSmallImg.offsetHeight - oMove.offsetHeight;
+            if(left<0){
+                left = 0;
+            };
+            if(top<0){
+                top = 0;
+            };
+            if(left >maxLeft){
+                left = maxLeft;
+            };
+            if(top > maxTop){
+                top = maxTop;
+            };
+            var bigLeft = left/maxLeft*(oBigPic.offsetWidth-oBigImg.offsetWidth);
+            var bigTop = top/maxTop*(oBigPic.offsetHeight-oBigImg.offsetHeight);
+            oMove.style.left = left + 'px';
+            oMove.style.top = top + 'px';
+            oBigPic.style.left = -bigLeft + 'px';
+            oBigPic.style.top = - bigTop + 'px';
+        };
 </script>
 </body>
-
 </html>
