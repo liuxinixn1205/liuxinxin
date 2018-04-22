@@ -34,3 +34,15 @@ function first(elem){
     elem = elem.firstChild;
     return elem.nodeType == 1? elem : next(elem);
 };
+
+
+
+//attachEvent&&addEventListenr;
+function addEvent(elem,type,handler){
+    if(elem.addEventListener){
+        elem.addEventListener(type,handler);
+    };
+    if(elem.attachEvent){
+        elem.attachEvent('on'+type,handler);
+    };
+};
