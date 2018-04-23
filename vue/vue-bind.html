@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+        [v-cloak] {
+            display: none;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="add">点击</button>
+        <div v-once>{{num}}</div>
+        <img :src="imgSrc+'.png'" alt="">
+        <div :class="[aa,{selected:isActive}]" >fellow20</div>
+        <div :style="[styleA,styleB]">hello world</div>
+        <div id="abc" ff-ee="gg"></div>
+        <div v-bind="{id:idName,'ff-ee':ffee}"></div>
+        <span v-pre>{{ imgSrc}}</span>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                imgSrc:"img/logo",
+                aa:'active',
+                bb:'selected',
+                isActive: false,
+                dcolor:'blue',
+                size:30,
+                styleA:{
+                    color:'yellow',
+                    fontSize:50+'px',
+                },
+                styleB:{
+                    border:1+'px',
+                    backgroundColor:"red"
+                },
+                idName:'aaaa',
+                ffee:"ggg",
+                num:0
+            },
+            computed:{
+                cisActive(){
+                    if(this.isActive){
+                        return 'active';
+                    }else{
+                        return "";
+                    }
+                  
+                }
+
+            },
+            methods:{
+                add(){
+                    this.num++;
+                }
+            }
+        })
+    
+    
+    </script>
+</body>
+</html>
