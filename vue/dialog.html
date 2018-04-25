@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+        .dia-bg{
+            position: fixed;
+            top: 40px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(160, 160, 155, 0.877);
+        }
+        .container{
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+            background: #ffffff;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            
+        }
+        .title{
+            height: 30px;
+            background: #000;
+            color: #ffffff;
+            padding: 0 5px;
+        }
+        .title span{
+            line-height: 30px;
+            margin-right: 430px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="dia1">登录</button>
+        <button @click='dia2'>注册</button>
+        <dialoga v-cloak v-show="diaShow" @close="diaShow=false">
+            <span slot='tltle'>登录</span>
+        </dialoga>
+        <dialoga v-cloak v-show="diaShow2" @close="diaShow2=false">
+            <span slot='tltle'>注册</span>
+        </dialoga>
+    </div>
+    <template id="dialog">
+        <div class="dia-bg">
+            <div class="container">
+                <div class="title">
+                    <slot name='title'></slot>
+                    <span>tltle</span>
+                    <span @click="$emit('close')">[X]</span>
+                </div>
+                <div class="content">
+                    <br>
+                    用户名：<input type="text" placeholder="请输入您的用户名"><br><br>
+                    密  码:&nbsp;<input type="password" name="" id="">
+                </div>
+            </div>
+        </div>
+    </template> 
+    <script src="vue.js"></script>
+    <script>
+        Vue.component('dialoga',{
+            template:"#dialog"
+        })
+        new Vue({
+            el:"#app",
+            data:{
+                diaShow:false,
+                diaShow2:false
+            },
+            methods:{
+                dia1(){
+                    this.diaShow = true;
+                },
+                dia2(){
+                    this.diaShow2 = true;
+                }
+            }
+        })
+    
+    
+    </script>
+</body>
+</html>
