@@ -6,10 +6,9 @@
     <script src="js/jquery-3.3.1.js"></script>
 </head>
 <body>
-<input type="text" id = "vals" value="">
-<button>点击</button>
-<div>
-    <p>aaaa</p>
+<input type="text" id = "search" value="">
+<div id='list'>
+    <p>aaaabc</p>
     <p>bbbbbb</p>
     <p>cc</p>
     <p>dd</p>
@@ -18,10 +17,15 @@
     <p>gggggg</p>
 </div>
 <script>
-    $("button").click(function () {
-        var thisVal = $("#vals").val();
-        $("p:contains("+thisVal+")").css("color","red");
-    });
+    $(function () {
+        var $list = $('#list p');
+        $('#search').on('keyup',function(){
+            $list.css('background','transparent');
+            if(this.value != ''){
+                $('#list p:contains('+this.value+')').css('background','red');
+            }
+        })
+    })
 
 </script>
 </body>
