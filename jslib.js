@@ -41,8 +41,33 @@ function first(elem){
 function addEvent(elem,type,handler){
     if(elem.addEventListener){
         elem.addEventListener(type,handler);
-    };
-    if(elem.attachEvent){
-        elem.attachEvent('on'+type,handler);
+    }else if(elem.attachEvent){
+        elem.fnxx = function (){
+            handler.call(elem);
+        };
+        elem.attachEvent('on'+type,elem.fnxx);
     };
 };
+
+//detachEvent&&removeEventListener
+function removeEvent(elem,type,handler){
+    if(elem,removeEventListener){
+        elem.removeEventListener(type,handler);
+    }else if(elem.detachEvent){
+        elem.detachEvent('on'+type,elem.fn.xx);
+    }
+}
+
+
+//实现深拷贝
+function clone(obj){
+    var newObj = {};
+    for(var p in newObj){
+        if(typeof obj[p] == 'object'){
+            newObj[p] = clone(obj[p]);
+        }else{
+            newObj[p] = obj[p]; 
+        }
+    }
+    return newObj;
+}
