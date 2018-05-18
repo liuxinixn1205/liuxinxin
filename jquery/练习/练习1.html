@@ -44,27 +44,16 @@
 </form>
 </body>
 <script>
-
-    //练习focus和blur
-//   $(":input").focus(function () {
-//       $(this).addClass("focus");
-//   }).blur(function () {
-//       $(this).removeClass("focus");
-//   })
-
-
-    //练习defaultValue和value
-$(":input").focus(function () {
-    $(this).addClass("focus");
-    if($(this).val()==this.defaultValue){
-        $(this).val("");
-    }
-}).blur(function () {
-    $(this).removeClass("focus");
-    if($(this).val()==this.value){
-        $(this).val(this.defaultValue);
-    }
-})
+    $(function (){
+        $(":input").focus(function (){
+            $(this).addClass('focus');
+            if($(this).val() == this.defaultValue){
+                this.value = '';
+            }
+        }).blur(function (){
+            $(this).removeClass('focus').val(this.value == ''?this.defaultValue:this.value);
+        })
+    })
 
 </script>
 
