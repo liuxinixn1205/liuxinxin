@@ -12,55 +12,37 @@
 <input type="checkbox">篮球
 <input type="checkbox">羽毛球
 <div>
-    <button id="abtn">全选</button>
-    <button id="bbtn">全不选</button>
-    <button id="fbtn">反选</button>
-
+    <!-- form表单里的button会默认被提交，如果取消提交，在button里加type=button -->
+    <button id="all">全选</button>
+    <button id="no">全不选</button>
+    <button id="reverse">反选</button>
 </div>
 <script>
-    var $aBtn = $("#abtn");
-    var $bBtn = $("#bbtn");
-    var $fBtn = $("#fbtn");
-    var $input = $("input");
-    
-    $aBtn.click(function () {
-        $input.prop("checked",true);
+    var $all = $('#all');
+    var $no = $('#no');
+    var $reverse = $('#reverse');
+    var $input = $('input');
+
+    $all.on('click',function(){
+        $input.prop('checked',true);
     });
-    $bBtn.click(function () {
-        $input.prop("checked",false);
-    });
-//    $fBtn.click(function () {
-//        for(var i=0;i<$input.length;i++){
-//            if($input.eq(i).prop("checked")){
-//                $input.eq(i).prop("checked",false);
-//            }else{
-//                $input.eq(i).prop("checked",true);
-//            }
-//        }
-//    });
-//    $fBtn.click(function () {
-//        $input.each(function (index,elem) {
-//            if($(elem).prop("checked")){
-//                $(elem).prop("checked",false)
-//            }else{
-//                $(elem).prop("checked",true);
-//            }
-//        })
-//    });
-    $input.each(function (index,elem) {
-        elem.checked = !elem.checked;
+    $no.on('click',function(){
+        $input.prop('checked',false);
     })
-//    var person={
-//        name:"xiaohong",
-//        age:"11",
-//        school:"heigongcheng"
-//    }
-//    //把原生的变成jquery对象。
-//    //$("#aa").get(0)把jQuery转换成原生。
-//    $(person).each(function (index,elem) {
-//        console.log(index);
-//        console.log(elem);
-//    })
+    $reverse.on('click',function(){//jquery
+        $input.each(function(index,elem,arr){
+            if($(elem).prop('checked')){
+                $(elem).prop('checked',false);
+            }else{
+                $(elem).prop('checked',true);
+            }         
+        })
+    })
+    $('#reverse').on('click',function(){//原生
+        $input.each(function(index,elem){
+            this.checked = !this.checked;
+        })
+    })
 </script>
 
 </body>
