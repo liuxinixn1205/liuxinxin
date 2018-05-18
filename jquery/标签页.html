@@ -72,28 +72,10 @@
     </div>
 </div>
 <script>
-//    var $li = $("#tab > li");
-//    var $ul = $("#content > ul");
-//    $li.click(function () {
-//        $li.removeClass("active");
-//        $ul.css("display","none");
-//        $(this).addClass("active");
-//        $ul.eq($(this).index()).css("display","block");
-//    })
-    $("#tab>li").click(function () {
-       $(this).add($("#content ul:eq("+$(this).index()+")")).addClass("active").siblings().removeClass("active");
-
-
-
-
-
-
-
-
-
-
-
-
+    var $tabLi = $('#tab li');
+    var $ul = $('#content ul');
+    $tabLi.on('mouseover',function(){
+        $(this).add($ul.eq($(this).index())).addClass('active').siblings().removeClass('active');      
     })
 
 </script>
