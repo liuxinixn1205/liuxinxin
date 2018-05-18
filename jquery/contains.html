@@ -6,27 +6,27 @@
     <script src="js/jquery-3.3.1.js"></script>
 </head>
 <body>
-<input type="text" id = "search" value="">
-<div id='list'>
-    <p>aaaabc</p>
-    <p>bbbbbb</p>
-    <p>cc</p>
-    <p>dd</p>
-    <p>ee</p>
-    <p>ffffff</p>
-    <p>gggggg</p>
-</div>
-<script>
-    $(function () {
-        var $list = $('#list p');
-        $('#search').on('keyup',function(){
-            $list.css('background','transparent');
-            if(this.value != ''){
-                $('#list p:contains('+this.value+')').css('background','red');
-            }
-        })
-    })
-
-</script>
+    <input type="text" value="" id="search">
+   <div id="list">
+       <p>iphone5</p>
+       <p>iphoneX</p>
+       <p>vivo</p>
+       <p>xiaomi</p>
+       <p>huawei</p>
+       <p>oppp</p>
+       <p>vivo X20</p>
+       <p>oppo R15</p>
+   </div>
+   <script>
+       $(function(){
+           $('#search').on('keyup',function(){
+               $('#list p').css('background','transparent');
+               if($(this).val() != ''){
+                   $('#list p:contains('+$(this).val()+')').css('background','red');
+               }           
+           })
+       })
+   
+   </script>
 </body>
 </html>
