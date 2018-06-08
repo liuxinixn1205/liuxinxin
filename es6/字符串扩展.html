@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>title</title>
 </head>
 <body>
-$END$
+    <script>
+        //模板字符串
+        // let a=5;
+        // let b=6;
+        // let str = "adhfhkjshfsfkgjkdgjdkgjdkljdlkhjf";
+        // let str = `ahchsjshjs${a}hjsjahjahjhufash${b}fuhasifsakvnsdkvna`;
+
+        // let str = 'hello world';
+        // console.log(str.indexOf('wo'));
+        // console.log(str.includes('woo'));//false；
+
+        // console.log(str.startsWith('hello'));//true
+        // console.log(str.endsWith('world'));//true
+
+
+
+        //封装startsWith
+        // String.prototype.sw= function (str){
+        //     if(this.indexOf(str)==0){
+        //         return true;
+        //     }
+        //     return false;
+        // };
+        // console.log(str.sw('hhello'));
+        // 封装endsWith
+        // String.prototype.ew= function (str){
+        //     if(this.indexOf(str)==this.length-str.length){
+        //         return true;
+        //     }
+        //     return false;
+        // };
+        // console.log(str.ew('world'));
+
+        let str='xy';
+        console.log(str.padStart(5,'abc'));//abcxy
+        console.log(str.padStart(7,'abc'));//abcabxy
+        console.log(str.padEnd(7,'abc'));//xyabcab
+        console.log(str.repeat(5));//xyxyxyxyxy
+        
+        
+        
+        
+        
+        
+    
+    </script>
 </body>
 </html>
