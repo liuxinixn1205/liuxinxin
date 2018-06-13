@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <script>
+        // function foo(a,b){
+        //     b = b||'world';
+        //     console.log(`${a} ${b}`);     
+        // }
+        // foo('hello','');
+
+        // function foo(a,b='world'){
+        //     console.log(`${a} ${b}`);
+        // }
+        // foo('hello');
+
+        // function foo(a='hello',b){
+        //     console.log(`${a} ${b}`);
+        // }
+        // foo(undefined,'world');
+
+        // function foo([a,b,c,d]){
+        //     console.log(a,b,c,d);            
+        // }
+        // foo([1,2,3,4]);
+
+
+        // function foo({name,age}){
+        //     console.log(name,age);
+        // }
+        // foo({
+        //     name:'zs',
+        //     age:18
+        // })
+
+        // function foo(a,b){
+        //     return a+b;
+        // }
+        // foo(5,6);
+        // console.log(foo.length);//2
+        // console.log(foo.name);
+        
+        // function foo(a,b=6,c){
+        //     return a+b+c;
+        // }
+        // console.log(foo.length);//1
+
+        // function foo(a,a,c){
+        //     console.log(a,a,c);
+        // }
+        // foo(5,6,7);//6,6,7
+        // console.log(foo.name);//foo
+
+        // 'use strict';
+        // a=5;
+        // console.log(a);
+
+        // function foo(){
+        //     console.log(this);
+        // }
+        // foo();
+
+        // function People(name,age){
+        //     this.name=name;
+        //     this.age=age;
+        // }
+        // let p1=new People('zs',18);
+
+        // function fac(n){
+        //     if(n==1){
+        //         return 1;
+        //     }
+        //     return n*arguments.callee(n-1);
+        // }
+        // console.log(fac(5));
+
+        //箭头函数
+        // function sum (x,y){
+        //     return x+y;
+        // }
+        // sum(5,6);
+
+        // let sum = (x,y)=>{
+        //     return x+y;
+        // }
+        // console.log(sum(5,6));
+        
+
+        // let oDiv1 = document.getElementById('div1');
+        // oDiv1.addEventListener('click',function(){
+        //     console.log(this);//div1
+        //     setTimeout(function(){
+        //         console.log(this);//window
+        //     },2000);
+        // },false);
+
+        // let oDiv1 = document.getElementById('div1');
+        // oDiv1.addEventListener('click',function(){
+        //     console.log(this);//div1
+        //     setTimeout(()=>{
+        //         console.log(this);//div1
+        //     },2000);
+        // },false);
+        
+
+        // let a = 5;
+        // let obj = {
+        //     a:6,
+        //     foo1:function (){
+        //         console.log(this.a);//6  this -> obj
+        //     },
+        //     foo2 : ()=>{
+        //         console.log(this.a);//undefined    this -> window 
+        //     }
+        // };
+        // obj.foo1();
+        // obj.foo2();
+        
+
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
