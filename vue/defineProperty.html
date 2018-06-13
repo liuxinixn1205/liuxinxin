@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="int">
+    <h1 id="h1"></h1>
+
+    <script>
+        let oInt = document.getElementById('int');
+        let oH1 = document.getElementById('h1');
+        let obj = {
+            name:'xiaoming'
+        };
+        let key = '';
+        oInt.onkeyup = function (){
+            obj.name = this.value;
+            h1.innerHtml = obj.name;
+        }
+        Object.defineProperty(obj,'name',{
+            get(){
+                return  key;
+                
+            },
+            set(val){
+                console.log('set='+val);
+                
+            }
+        });
+    </script>
+   
+</body>
+</html>

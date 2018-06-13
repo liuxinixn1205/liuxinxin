@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="changeColor">change</button>
+        <div v-test="aaa">自定义指令</div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        Vue.directive("test",function(el,binding,vnode){//公有的
+            el.style.color= binding.value;//相当于执行了bind和update
+            console.log(el,binding,vnode);
+            
+        });
+        // Vue.directive("test",{//只执行了update
+        //     bind(el,binding,vnode){
+        //         console.log('bind');
+        //         el.style.color = binding.value;
+        //     },
+        //     inserted(){
+        //         console.log('inserted');
+
+        //     },
+        //     update(el,binding,vnode){
+        //         console.log('update');
+        //         el.style.color = binding.value;
+        //     },
+        //     componentUpdate(){
+        //         console.log('componentUpd');
+
+        //     },
+        //     unbind(){
+        //         console.log('unbind');
+
+        //     }
+        // })
+    new Vue({
+        el:"#app",
+        data:{
+            aaa:"blue",
+        },
+        methods:{
+            changeColor(){
+                this.aaa = "red";
+            }
+        }
+    });
+   
+    
+    
+    </script>
+</body>
+</html>

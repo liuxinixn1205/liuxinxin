@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <test>
+            <span slot="name">小明</span>
+            <span slot="age">19</span>
+        </test>
+    </div>
+    <template id="aaa">
+        <div>
+            <div>姓名:
+                <slot name="name"></slot>
+            </div>
+            <div>年龄:<slot name="age"></slot></div>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component("test",{
+            template:"#aaa"
+        });
+        new Vue({
+            el:"#app",
+        })  
+    </script>
+    
+</body>
+</html>
